@@ -1,0 +1,23 @@
+//- Все примеси в этом файле должны начинаться c имени блока (top-nav)
+
+mixin top-nav(text, mods)
+
+  //- Принимает:
+  //-   text    {string} - текст
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +top-nav('Текст', 'some-mod')
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' top-nav--' + modsList[i].trim();
+      }
+    }
+
+  .top-nav(class=allMods)&attributes(attributes)
+    .top-nav__inner
+      block

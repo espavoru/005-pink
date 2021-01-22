@@ -1,8 +1,8 @@
-// В этом файле должны быть стили для БЭМ-блока page-header, его элементов,
+// В этом файле должны быть стили для БЭМ-блока top-nav, его элементов,
 // модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
 // Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
 
-.page-header {
+.top-nav {
 
-  background-color: #283645;
+  $block-name:                &; // #{$block-name}__element
 }
