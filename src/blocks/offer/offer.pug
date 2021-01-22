@@ -1,0 +1,25 @@
+//- Все примеси в этом файле должны начинаться c имени блока (offer)
+
+mixin offer(text, mods)
+
+  //- Принимает:
+  //-   text    {string} - текст
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +offer('Текст', 'some-mod')
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' offer--' + modsList[i].trim();
+      }
+    }
+
+  section.offer(class=allMods)&attributes(attributes)
+    .offer__inner
+      p.offer__content Устали от серости мегаполиса?
+      p.offer__content Нам есть, что вам предложить!
+      block
