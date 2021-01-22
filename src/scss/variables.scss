@@ -26,9 +26,14 @@ $color-gh:                    #24292e;
 
 // Семантические цвета
 
-$text-color:                  $gray-darkest;
+$text-color:                  #283645;
+$text-color-headings:         $black;
 $text-color-muted:            $gray;
+$text-color-accent:           #d22856;
+
 $body-bg:                     $white;
+$body-bg-contrast:            $gray-lightest;
+
 
 $link-color:                  $color-main;
 $link-color--hover:           darken($color-main, 15%);
