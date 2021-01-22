@@ -18,6 +18,13 @@ mixin top-nav(text, mods)
       }
     }
 
-  .top-nav(class=allMods)&attributes(attributes)
-    .top-nav__inner
+  nav.top-nav#nav(class=allMods)&attributes(attributes)
+    +burger('Toggle mobile menu', 'nav', 'top-nav--open')(class='top-nav__toggler')
+    ul.top-nav__list
+      li.top-nav__item
+        a.top-nav__link(href='index.html') Главная
+      li.top-nav__item
+        a.top-nav__link(href='photos.html') Фотографии
+      li.top-nav__item
+        a.top-nav__link(href='contest.html') Конкурс
       block
