@@ -1,0 +1,23 @@
+//- Все примеси в этом файле должны начинаться c имени блока (review)
+
+mixin review(text, mods)
+
+  //- Принимает:
+  //-   text    {string} - текст
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +review('Текст', 'some-mod')
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' review--' + modsList[i].trim();
+      }
+    }
+
+  .review(class=allMods)&attributes(attributes)
+    .review__inner
+      block

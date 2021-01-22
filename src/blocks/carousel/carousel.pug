@@ -1,0 +1,48 @@
+//- Все примеси в этом файле должны начинаться c имени блока (carousel)
+
+mixin carousel(text, mods)
+
+  //- Принимает:
+  //-   text    {string} - текст
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +carousel('Текст', 'some-mod')
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' carousel--' + modsList[i].trim();
+      }
+    }
+
+  .carousel(class=allMods)&attributes(attributes)
+    ul.carousel__items
+      li.carousel__item
+        h2.carousel__item-author Николай Петров
+        p.carousel__item-review
+          | «Это приложение перевернуло мой мир и позволило по-новому взглянуть
+          | на привычные серые вещи! А еще я познакомился со своей будущей женой
+          | в комментариях к выложенной фотографии!»
+
+      li.carousel__item
+        h2.carousel__item-author John Doe
+        p.carousel__item-review
+          | Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente
+          | dolores sunt labore nobis rerum accusamus explicabo itaque repudiandae
+          | deserunt quibusdam earum aspernatur unde officiis non voluptatibus
+
+      li.carousel__item
+        h2.carousel__item-author Joe Doe
+        p.carousel__item-review
+          | Molestiae atque, laboriosam ipsum similique. Consequuntur atque quaerat
+          | id quibusdam nam provident autem ullam! Consequatur, soluta est. Iure
+          | modi impedit voluptatibus, accusantium neque alias!
+
+    .carousel__togglers
+      i.carousel__toggler 1
+      i.carousel__toggler 2
+      i.carousel__toggler 3
+      block
