@@ -18,6 +18,31 @@ mixin review(text, mods)
       }
     }
 
-  .review(class=allMods)&attributes(attributes)
+  section.review(class=allMods)&attributes(attributes)
     .review__inner
+      +carousel('reviews', 3)
+
       block
+
+mixin review-items()
+
+  -
+    const options = [
+      {
+        'title': 'Николай Петров',
+        'text': '«Это приложение перевернуло мой мир и позволило по-новому взглянуть на привычные серые вещи! А еще я познакомился со своей будущей женой в комментариях к выложенной фотографии!»'
+      },
+      {
+        'title': 'John Doe',
+        'text': 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente dolores sunt labore nobis rerum accusamus explicabo itaque repudiandae deserunt quibusdam earum aspernatur unde officiis non voluptatibus'
+      },
+      {
+        'title': 'Joe Doe',
+        'text': 'Molestiae atque, laboriosam ipsum similique. Consequuntur atque quaerat id quibusdam nam provident autem ullam! Consequatur, soluta est. Iuremodi impedit voluptatibus, accusantium neque alias!'
+      }
+    ]
+
+  each item in options
+    li.carousel__item
+      h2.carousel__item-author= item.title
+      p.carousel__item-review= item.text

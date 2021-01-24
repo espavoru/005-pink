@@ -1,12 +1,13 @@
 //- Все примеси в этом файле должны начинаться c имени блока (carousel)
 
-mixin carousel(text, mods)
+mixin carousel(id, items, mods)
 
   //- Принимает:
-  //-   text    {string} - текст
+  //-   id      {string} - carousel id
+  //-   items   {number} - total number of items
   //-   mods    {string} - список модификаторов
   //- Вызов:
-        +carousel('Текст', 'some-mod')
+        +carousel('reviews', 'some-mod')
 
   -
     // список модификаторов
@@ -20,29 +21,15 @@ mixin carousel(text, mods)
 
   .carousel(class=allMods)&attributes(attributes)
     ul.carousel__items
-      li.carousel__item
-        h2.carousel__item-author Николай Петров
-        p.carousel__item-review
-          | «Это приложение перевернуло мой мир и позволило по-новому взглянуть
-          | на привычные серые вещи! А еще я познакомился со своей будущей женой
-          | в комментариях к выложенной фотографии!»
+      if id == 'reviews'
+        +review-items()
 
-      li.carousel__item
-        h2.carousel__item-author John Doe
-        p.carousel__item-review
-          | Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente
-          | dolores sunt labore nobis rerum accusamus explicabo itaque repudiandae
-          | deserunt quibusdam earum aspernatur unde officiis non voluptatibus
-
-      li.carousel__item
-        h2.carousel__item-author Joe Doe
-        p.carousel__item-review
-          | Molestiae atque, laboriosam ipsum similique. Consequuntur atque quaerat
-          | id quibusdam nam provident autem ullam! Consequatur, soluta est. Iure
-          | modi impedit voluptatibus, accusantium neque alias!
+      if id == 'price'
+        +price-items()
 
     .carousel__togglers
-      i.carousel__toggler 1
-      i.carousel__toggler 2
-      i.carousel__toggler 3
-      block
+      - let n = 0
+      while n < items
+        i.carousel__toggler= ++n
+
+    block

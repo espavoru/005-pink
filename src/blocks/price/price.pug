@@ -1,0 +1,64 @@
+//- Все примеси в этом файле должны начинаться c имени блока (price)
+
+mixin price(text, mods)
+
+  //- Принимает:
+  //-   text    {string} - текст
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +price('Текст', 'some-mod')
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' price--' + modsList[i].trim();
+      }
+    }
+
+  .price(class=allMods)&attributes(attributes)
+    .price__inner
+      +carousel('price', 3)
+      block
+
+mixin price-items()
+
+  -
+    const options = [
+      {
+        'name': 'База',
+        'price': '1.99 usd',
+        'features': [{'name': 'Розовый фильтр','on': true},{'name': 'Смайлики'},{'name': 'Комментарии'}]
+      },
+      {
+        'name': 'Стандарт',
+        'price': '3.99 usd',
+        'tag': true,
+        'features': [{'name': 'Розовый фильтр','on': true},{'name': 'Смайлики', 'on': true},{'name': 'Комментарии'}]
+      },
+      {
+        'name': 'Анлим',
+        'price': '9.99 usd',
+        'features': [{'name': 'Розовый фильтр','on': true},{'name': 'Смайлики', 'on': true},{'name': 'Комментарии', 'on': true}]
+      }
+    ]
+
+  each item in options
+    li.price__item
+      ul.price__table
+        if item.tag
+          li(class='price__title price__title--tag')
+            span.price__name= item.name
+            span.price__price= item.price
+        else
+          li(class='price__title')
+            span.price__name= item.name
+            span.price__price= item.price
+
+        each feature in item.features
+          if feature.on
+            li(class='price__feature price__feature--on')= feature.name
+          else
+            li(class='price__feature')= feature.name
