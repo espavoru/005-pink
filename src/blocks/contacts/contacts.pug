@@ -1,0 +1,38 @@
+//- Все примеси в этом файле должны начинаться c имени блока (contacts)
+
+mixin contacts(text, mods)
+
+  //- Принимает:
+  //-   text    {string} - текст
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +contacts('Текст', 'some-mod')
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' contacts--' + modsList[i].trim();
+      }
+    }
+
+  section.contacts(class=allMods)&attributes(attributes)
+    .contacts__inner
+      h2.contacts__top-content
+        | Остались вопросы?
+        | Свяжитесь с нами!
+
+      p.contacts__item
+        b.contacts__info Звоните:
+        | +380 555 66 77
+      p.contacts__item
+        b.contacts__info Пишите:
+        | info@somemail.com
+      p.contacts__item
+        b.contacts__info Приезжайте в гости:
+        | г.Киев, ул.Площадь Свободы, 2
+
+      .contacts__map
+      block
