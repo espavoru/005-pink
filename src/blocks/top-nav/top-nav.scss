@@ -13,7 +13,12 @@
   &__toggler {
     position: absolute;
     top: 16px;
-    right: 16px;
+    right: 20px;
+    width: 50px;
+
+    .top-nav--open & {
+      width: 30px;
+    }
   }
 
   &__list {
@@ -43,6 +48,10 @@
   }
 
   &--open {
+    background-color: rgba(40, 54, 69, 1);
+  }
+
+  #{$block-name}--open & {
     display: block;
   }
 }

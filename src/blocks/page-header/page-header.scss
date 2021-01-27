@@ -3,8 +3,10 @@
 // Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
 
 .page-header {
-  position: relative;
+  position: absolute;
+  z-index: 10;
+  width: 100%;
   padding-top: 1px;
 
-  background-color: rgba(40, 54, 69, 1);
+  background-color: rgba(0, 0, 0, 0.3);
 }

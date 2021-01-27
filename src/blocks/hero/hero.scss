@@ -5,4 +5,24 @@
 .hero {
 
   $block-name:                &; // #{$block-name}__element
+
+  position: relative;
+  min-height: 460px;
+  overflow: hidden;
+
+  background-image: url('../img/bg-hero-mobile.jpg');
+  background-repeat: no-repeat;
+  background-position: center 0;
+  background-size: cover;
+
+  &__inner {
+    position: absolute;
+    bottom: -28px;
+    width: 320px;
+    height: 314px;
+
+    background:
+      url('../img/img-screen-01-mobile.jpg') no-repeat 104px 32px,
+      url('../img/img-mockup-iphone-6-mobile.png');
+  }
 }
