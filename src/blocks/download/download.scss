@@ -5,4 +5,41 @@
 .download {
 
   $block-name:                &; // #{$block-name}__element
+
+  padding-top: 27px;
+  padding-bottom: 16px;
+  background-color: #1d2631;
+
+  &__inner {
+    width: 280px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  &__button {
+    width: 280px;
+    margin-bottom: 40px;
+  }
+
+  &__system-inner {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+    margin-bottom: 22px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  &__system-img--ios {
+    margin-top: -6px;
+  }
+
+  &__text {
+    font-size: 14px;
+    line-height: 24px;
+    font-weight: 300;
+    color: $white;
+    text-align: center;
+  }
 }

@@ -225,15 +225,6 @@ figure {
   margin-bottom: $typo-margin-vertical;
 }
 
-p { /* stylelint-disable Unknown property: 'hyphenate-limit-chars' */
-  // http://clagnut.com/blog/2395
-  hyphens: auto;
-  hyphenate-limit-chars: 6 3 3;
-  hyphenate-limit-lines: 2;
-  hyphenate-limit-last: always;
-  hyphenate-limit-zone: 8%;
-} /* stylelint-enable */
-
 address {
   font-style: normal;
 }
