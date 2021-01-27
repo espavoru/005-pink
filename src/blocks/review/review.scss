@@ -5,4 +5,33 @@
 .review {
 
   $block-name:                &; // #{$block-name}__element
+
+  padding-top: 42px;
+  padding-bottom: 40px;
+
+  &__inner {
+    width: 280px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  & .carousel__item {
+    min-height: 237px;
+
+    text-align: center;
+  }
+
+  & .carousel__item-author {
+    margin: 0;
+    margin-bottom: 13px;
+
+    font-size: 18px;
+    line-height: 30px;
+    color: $black;
+  }
+
+  & .carousel__item-review {
+    font-size: 14px;
+    line-height: 30px;
+  }
 }

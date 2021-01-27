@@ -5,4 +5,54 @@
 .carousel {
 
   $block-name:                &; // #{$block-name}__element
+
+  &__items {
+    display: flex;
+    margin: 0;
+    margin-bottom: 19px;
+    padding: 0;
+    overflow: hidden;
+
+    list-style: none;
+  }
+
+  &__item {
+    display: none;
+    flex-basis: 100%;
+    flex-shrink: 0;
+  }
+
+  &__item--active {
+    display: block;
+  }
+
+  &__togglers {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__toggler {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    margin-right: 12px;
+
+    font-size: 0;
+    line-height: 0;
+
+    border: 3px solid $white;
+    border-radius: 50%;
+
+    background-color: $gray-lightest;
+
+    &:last-of-type {
+      margin-right: 0;
+    }
+
+    &--active {
+      border: 3px solid $text-color;
+      background-color: $white;
+    }
+  }
 }
