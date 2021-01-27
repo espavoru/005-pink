@@ -5,4 +5,23 @@
 .offer {
 
   $block-name:                &; // #{$block-name}__element
+
+  padding-top: 42px;
+  padding-bottom: 20px;
+
+  &__inner {
+    width: 205px;
+    margin-left: auto;
+    margin-right: auto;
+
+    text-align: center;
+  }
+
+  &__content {
+    margin-bottom: 32px;
+
+    font-size: 24px;
+    line-height: 27px;
+    font-weight: 300;
+  }
 }
