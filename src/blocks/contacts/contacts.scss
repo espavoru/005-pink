@@ -5,4 +5,49 @@
 .contacts {
 
   $block-name:                &; // #{$block-name}__element
+
+  padding-top: 42px;
+
+  &__inner {
+    text-align: center;
+  }
+
+  &__top-content {
+    margin: 0;
+    margin-bottom: 38px;
+
+    font-size: 24px;
+    font-weight: 300;
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 26px;
+
+    font-size: 24px;
+    line-height: 30px;
+    font-weight: 300;
+    color: $text-color-accent;
+  }
+
+  &__info {
+    margin-bottom: 3px;
+
+    font-size: 18px;
+    line-height: 18px;
+    color: $text-color;
+    font-weight: 700;
+  }
+
+  &__map {
+    width: 320px;
+    height: 200px;
+    margin-left: auto;
+    margin-right: auto;
+
+    background-image: url('../img/img-map-mobile.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
 }
