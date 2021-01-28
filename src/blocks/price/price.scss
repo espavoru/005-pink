@@ -5,4 +5,101 @@
 .price {
 
   $block-name:                &; // #{$block-name}__element
+
+  padding-top: 134px;
+  padding-bottom: 48px;
+  overflow: hidden;
+
+  background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="320" height="827.31" viewBox="0 0 320 827.31"%3E%3Cdefs%3E%3Cstyle%3E .cls-1 %7B fill: %23f2f2f2; fill-rule: evenodd; %7D %3C/style%3E%3C/defs%3E%3Cpath class="cls-1" d="M-425.618,1282.9L745.048,1166.44v827.32H-425.618V1282.9Z" transform="translate(0 -1166.44)"/%3E%3C/svg%3E%0A');
+
+  &__table {
+    padding: 0;
+  }
+
+  &__title {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    padding-top: 15px;
+    padding-bottom: 20px;
+    overflow: hidden;
+
+    text-align: center;
+    color: $white;
+
+    background-color: $text-color;
+
+    &--tag::before {
+      content: 'Хит';
+
+      display: block;
+      position: absolute;
+      top: 11px;
+      left: -31px;
+      width: 110px;
+      height: 30px;
+
+      font-size: 14px;
+      line-height: 29px;
+      text-align: center;
+      text-transform: uppercase;
+      transform: rotate(-45deg);
+
+      background-color: $text-color-accent;
+    }
+  }
+
+  &__name {
+    margin-bottom: 3px;
+
+    font-size: 18px;
+    line-height: 30px;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+
+  &__price {
+    font-size: 24px;
+    line-height: 30px;
+    font-weight: 300;
+    text-transform: uppercase;
+  }
+
+  &__feature {
+    border: 2px solid $gray-lightest;
+    border-top: none;
+    padding: 15px 22px;
+
+    font-size: 14px;
+    line-height: 30px;
+    text-transform: uppercase;
+
+    background-color: $white;
+    background-image: url('data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAABsAAAAaCAYAAABGiCfwAAABM0lEQVRIia3W0Q2CMBAG4N9O4Ag8+awb6By+wAY6iW4Am+AGMIIjGCcwNdfkuFzba+ESItX2Pnslpbvv9TABOAKYAVwAfLBd7AGMIb+jG9DnSB22CA798zuaEQTYrMQaASHMzJfuJcBJdCwJbbzPf3G0Rh4c2I+yBNbQlmIIz4JjX3YrwRjUhYYTA2rBLKRhNaAJimEloBlKYSmwpXZbAuWwAN4F2LOLQ/cUZMF8PJUkrWh31C8ZFgyZ8shyR8OKbRJWrKV10qJXyqqGBbspkCxbT/1WYT7Jg7U/tEbh4u++R2L2WUyWR27Yg/KyTZU7isWgWfTT3u5RUMOsUDEosVKoCORYLWQGnbLB1kA58L9hO7o5iwGnCig13ucf+VGO/7N3JRTCj5eVWRzltj6kLpcCmH8Hs3B2PNXqygAAAABJRU5ErkJggg==');
+    background-repeat: no-repeat;
+    background-position: 92% center;
+
+    &--on {
+      background-image: url('data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB8AAAAVCAYAAAC+NTVfAAABBElEQVRIib3V3RGCMAwH8L8eAzCCbsAC3smdC7iBbuAGMIIb4Cby5KtugCM4ghcv8XohlIq0eeHT/JKW2sXmtkPCyAFcARQAHsuEcOHAn+ssMZw799oUnVvwBcA+dudD8JFOYnbuhWPiBwB3HxwLJ7hR984apph7zi34yF33gjpfAaj5mAwG4zQ3FYCOE0yJ068weNjdj0ISeH+kojGKHoWlc/0hWMlC4Rf9eYQWnzkvusMWMgIWXNKGEVj4d6n11iAnr2PBUOvcKqBSIyJb4t+wxqWAkhNKyBISeDsHbOEU7UABnbMXg8H1VHgIl8S6gHzk+Wy4D5gFHsNd6MnX1pRMCwBvqvNISJ1Kl1EAAAAASUVORK5CYII=');
+    }
+  }
+
+  & .carousel__items {
+    margin-bottom: 37px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  & .carousel__item {
+    flex-basis: 280px;
+    flex-grow: 0;
+  }
+
+  & .carousel__toggler {
+    border: 3px solid #f2f2f2;
+  }
+
+  & .carousel__toggler--active {
+    border: 3px solid #283645;
+  }
 }

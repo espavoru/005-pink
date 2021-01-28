@@ -12,8 +12,6 @@
     margin-bottom: 19px;
     padding: 0;
     overflow: hidden;
-
-    list-style: none;
   }
 
   &__item {
@@ -44,7 +42,7 @@
     border: 3px solid $white;
     border-radius: 50%;
 
-    background-color: $gray-lightest;
+    background-color: #b5b9be;
 
     &:last-of-type {
       margin-right: 0;
@@ -54,5 +52,9 @@
       border: 3px solid $text-color;
       background-color: $white;
     }
+  }
+
+  & ul {
+    list-style: none;
   }
 }
