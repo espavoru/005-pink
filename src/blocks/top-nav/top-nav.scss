@@ -16,8 +16,16 @@
     right: 20px;
     width: 50px;
 
+    @media (min-width: 660px) {
+      top: 35px;
+    }
+
     .top-nav--open & {
       width: 30px;
+
+      @media (min-width: 660px) {
+        top: 40px;
+      }
     }
   }
 

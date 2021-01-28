@@ -13,11 +13,26 @@
 
   white-space: nowrap;
 
+  @media (min-width: 660px) {
+    padding-top: 24px;
+    margin-bottom: 40px;
+  }
+
   img {
     display: block;
+
+    @media (min-width: 660px) {
+      width: 147px;
+      height: 40px;
+    }
   }
 
   .top-nav--open & {
     margin-bottom: 20px;
+
+    @media (min-width: 660px) {
+      padding-top: 27px;
+      margin-bottom: 42px;
+    }
   }
 }
