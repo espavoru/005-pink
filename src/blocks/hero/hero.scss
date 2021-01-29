@@ -19,11 +19,24 @@
     background-size: cover;
   }
 
+  @media (min-width: 660px) {
+    background-image: url('../img/bg-hero-tablet.jpg');
+  }
+
   &__inner {
     padding-top: 460px;
 
     background:
-      url('../img/img-screen-01-mobile.jpg') no-repeat 104px 205px,
-      url('../img/img-mockup-iphone-6-mobile.png') no-repeat 0 172px;
+      url('../img/img-mockup-iphone-6-mobile.png') no-repeat 0 172px,
+      url('../img/img-screen-01-mobile.jpg') no-repeat 104px 205px;
+
+    @media (min-width: 660px) {
+      @include container($md-grid-gutter: 40px);
+      padding-top: 0;
+
+      background:
+        url('../img/img-mockup-iphone-6-tablet.png') no-repeat 0 185px,
+        url('../img/img-screen-01-tablet.jpg') no-repeat 371px 239px;
+    }
   }
 }
