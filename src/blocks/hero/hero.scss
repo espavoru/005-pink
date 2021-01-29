@@ -24,6 +24,10 @@
   }
 
   &__inner {
+    @include container(
+      $xs-grid-gutter: 0,
+      $sm-grid-gutter: 0,
+      $md-grid-gutter: 40px);
     padding-top: 460px;
 
     background:
@@ -31,7 +35,6 @@
       url('../img/img-screen-01-mobile.jpg') no-repeat 104px 205px;
 
     @media (min-width: 660px) {
-      @include container($md-grid-gutter: 40px);
       padding-top: 0;
 
       background:
