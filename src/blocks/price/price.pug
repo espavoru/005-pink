@@ -20,6 +20,10 @@ mixin price(text, mods)
 
   .price(class=allMods)&attributes(attributes)
     .price__inner
+      ul(class='price__features')
+        li.price__feature.price__feature--no-icons Розовый фильтр
+        li.price__feature.price__feature--no-icons Смайлики
+        li.price__feature.price__feature--no-icons Комментарии
       +carousel('price', 3)
       block
 
@@ -52,7 +56,7 @@ mixin price-items()
           li(class='price__title price__title--tag')
             span.price__name= item.name
             span.price__price= item.price
-        else
+        else if item.name
           li(class='price__title')
             span.price__name= item.name
             span.price__price= item.price

@@ -3,7 +3,7 @@ const Carousel = (options) => {
   const togglers = document.querySelectorAll(`${options.cls} .carousel__toggler`);
   let i = 0;
 
-  items[0].classList.add('carousel__item--active');
+  items[1].classList.add('carousel__item--active');
   togglers[0].classList.add('carousel__toggler--active');
 
   const showNextSlide = () => {

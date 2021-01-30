@@ -6,6 +6,13 @@
 
   $block-name:                &; // #{$block-name}__element
 
+  @media (min-width: 660px) {
+
+    & .price__feature {
+      font-size: 0;
+    }
+  }
+
   &__items {
     display: flex;
     margin: 0;
