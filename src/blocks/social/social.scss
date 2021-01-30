@@ -23,7 +23,7 @@
     background-color: $gray;
 
     #{$block-name}__link-wrap--fb & {
-      background-color: $color-fb;
+      padding-top: 3px;
     }
 
     // #{$block-name}__link-wrap--vk & {
