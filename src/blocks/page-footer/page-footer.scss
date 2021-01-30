@@ -3,4 +3,12 @@
 // Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
 
 .page-footer {
+
+  $block-name:                &; // #{$block-name}__element
+
+  display: none;
+
+  @media (min-width: 660px) {
+    display: block;
+  }
 }
