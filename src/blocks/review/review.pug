@@ -30,14 +30,17 @@ mixin review-items()
     const options = [
       {
         'title': 'Николай Петров',
+        'info': '25 лет, водитель трамвая',
         'text': '«Это приложение перевернуло мой мир и позволило по-новому взглянуть на привычные серые вещи! А еще я познакомился со своей будущей женой в комментариях к выложенной фотографии!»'
       },
       {
         'title': 'John Doe',
+        'info': 'Ipsum similique. Consequuntur dolor sit amet.',
         'text': 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente dolores sunt labore nobis rerum accusamus explicabo itaque repudiandae deserunt quibusdam earum aspernatur unde officiis non voluptatibus'
       },
       {
         'title': 'Joe Doe',
+        'info': 'Mpsum similique. Consequuntur',
         'text': 'Molestiae atque, laboriosam ipsum similique. Consequuntur atque quaerat id quibusdam nam provident autem ullam! Consequatur, soluta est. Iuremodi impedit voluptatibus, accusantium neque alias!'
       }
     ]
@@ -45,4 +48,5 @@ mixin review-items()
   each item in options
     li.carousel__item
       h2.carousel__item-author= item.title
+      span.carousel__item-info= item.info
       p.carousel__item-review= item.text

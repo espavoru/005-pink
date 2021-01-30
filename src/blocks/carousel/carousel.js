@@ -65,7 +65,7 @@ const Carousel = (options) => {
 
 const reviewSliderOptions = {
   'cls': '.review',
-  'autoSlide': true
+  'autoSlide': false
 };
 Carousel(reviewSliderOptions);
 

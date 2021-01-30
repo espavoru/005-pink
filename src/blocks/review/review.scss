@@ -8,6 +8,10 @@
 
   padding-top: 42px;
 
+  @media (min-width: 660px) {
+    padding-top: 65px;
+  }
+
   &__inner {
     @include container(
       $xs-grid-gutter: 40px,
@@ -23,7 +27,7 @@
   }
 
   & .carousel__item {
-    min-height: 237px;
+    min-height: 203px;
 
     text-align: center;
   }
@@ -35,10 +39,34 @@
     font-size: 18px;
     line-height: 30px;
     color: $black;
+
+    @media (min-width: 660px) {
+      margin-bottom: 2px;
+
+      font-size: 20px;
+    }
+  }
+
+  & .carousel__item-info {
+    display: none;
+
+    @media (min-width: 660px) {
+      display: block;
+
+      font-size: 14px;
+      line-height: 30px;
+    }
   }
 
   & .carousel__item-review {
     font-size: 14px;
     line-height: 30px;
+
+    @media (min-width: 660px) {
+      order: -1;
+      margin-bottom: 35px;
+
+      font-size: 18px;
+    }
   }
 }
