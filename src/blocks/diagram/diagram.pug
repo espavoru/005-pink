@@ -1,0 +1,31 @@
+//- Все примеси в этом файле должны начинаться c имени блока (diagram)
+
+mixin diagram(text, mods)
+
+  //- Принимает:
+  //-   text    {string} - текст
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +diagram('Текст', 'some-mod')
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' diagram--' + modsList[i].trim();
+      }
+    }
+
+  section.diagram(class=allMods)&attributes(attributes)
+    .diagram__inner
+      .diagram__image
+      .diagram__content
+        h2.diagram__title
+          | Эффект
+          | на 24 часа!
+        p.diagram__text
+          | Британские ученые провели исследования и доказали, что положительный эффект от использования приложения длится целые сутки!
+        a.diagram__link(href='#') Узнать больше об исследовании
+      block

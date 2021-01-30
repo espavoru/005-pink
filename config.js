@@ -38,7 +38,7 @@ let config = {
     'blocks': 'src/blocks/'
   },
   'optionsGHpages': {
-    'remote': 'midi-piano', // options for github-pages
+    'remote': 'quiz-app', // options for github-pages
   }
 };
 

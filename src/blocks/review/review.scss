@@ -9,9 +9,17 @@
   padding-top: 42px;
 
   &__inner {
-    width: 280px;
-    margin-left: auto;
-    margin-right: auto;
+    @include container(
+      $xs-grid-gutter: 40px,
+      $sm-grid-gutter: 40px,
+      $md-grid-gutter: 40px
+    );
+
+    max-width: 280px;
+
+    @media (min-width: 660px) {
+      max-width: 100%;
+    }
   }
 
   & .carousel__item {
