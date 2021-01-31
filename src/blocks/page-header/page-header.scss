@@ -9,4 +9,15 @@
   padding-top: 1px;
 
   background-color: rgba(0, 0, 0, 0.3);
+
+  &__inner {
+    @include container(
+      $xs-grid-gutter: 40px,
+      $sm-grid-gutter: 40px,
+      $md-grid-gutter: 40px,
+      $lg-grid-gutter: 40px,
+    );
+
+    position: relative;
+  }
 }

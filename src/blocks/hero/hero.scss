@@ -27,7 +27,10 @@
     @include container(
       $xs-grid-gutter: 0,
       $sm-grid-gutter: 0,
-      $md-grid-gutter: 40px);
+      $md-grid-gutter: 0,
+      $lg-grid-gutter: 0
+    );
+
     padding-top: 460px;
 
     background:
@@ -40,6 +43,12 @@
       background:
         url('../img/img-mockup-iphone-6-tablet.png') no-repeat 0 185px,
         url('../img/img-screen-01-tablet.jpg') no-repeat 371px 239px;
+    }
+
+    @media (min-width: 960px) {
+      background:
+        url('../img/img-mockup-iphone-6-tablet.png') no-repeat 200px 185px,
+        url('../img/img-screen-01-tablet.jpg') no-repeat 571px 239px;
     }
   }
 }
