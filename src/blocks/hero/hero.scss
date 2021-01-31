@@ -23,12 +23,17 @@
     background-image: url('../img/bg-hero-tablet.jpg');
   }
 
+  @media (min-width: 1200px) {
+    background-image: url('../img/bg-hero-desktop.jpg');
+  }
+
   &__inner {
     @include container(
       $xs-grid-gutter: 0,
       $sm-grid-gutter: 0,
       $md-grid-gutter: 0,
-      $lg-grid-gutter: 0
+      $lg-grid-gutter: 0,
+      $xl-grid-gutter: 0
     );
 
     padding-top: 460px;
@@ -55,6 +60,10 @@
       background:
         url('../img/img-mockup-iphone-6-tablet.png') no-repeat 200px 185px,
         url('../img/img-screen-01-tablet.jpg') no-repeat 571px 239px;
+    }
+
+    @media (min-width: 1200px) {
+      background: url('../img/img-mockup-iphone-6-desktop.png') no-repeat -28% bottom;
     }
   }
 }
