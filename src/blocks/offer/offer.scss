@@ -12,6 +12,11 @@
     padding-top: 48px;
   }
 
+  @media (min-width: 960px) {
+    padding-top: 65px;
+    padding-bottom: 65px;
+  }
+
   &__inner {
     @include container(
       $xs-grid-gutter: 40px,
@@ -38,6 +43,10 @@
       font-size: 40px;
       line-height: 1.2;
       white-space: pre-line;
+    }
+
+    @media (min-width: 960px) {
+      font-size: 50px;
     }
 
     &:last-of-type {

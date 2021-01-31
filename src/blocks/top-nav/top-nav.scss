@@ -10,8 +10,8 @@
   transition: all $transition-time;
   box-shadow: 0 -1px 0 0 #000000;
 
-  @media (min-width: 1200px) {
-    @include col(xl, 10, 12, 0);
+  @media (min-width: 960px) {
+    @include col(lg, 10, 12, 0);
 
     display: flex;
   }
@@ -26,7 +26,7 @@
       top: 35px;
     }
 
-    @media (min-width: 1200px) {
+    @media (min-width: 960px) {
       display: none;
     }
 
@@ -45,7 +45,7 @@
 
     list-style: none;
 
-    @media (min-width: 1200px) {
+    @media (min-width: 960px) {
       display: flex;
       flex-basis: 100%;
       align-items: center;
@@ -57,7 +57,7 @@
     margin-bottom: 1px;
     box-shadow: 0 1px 0 0 #000000, inset 0 1px 0 0 rgba(255, 255, 255, 0.15);
 
-    @media (min-width: 1200px) {
+    @media (min-width: 960px) {
       margin-bottom: 0;
       margin-left: 80px;
       box-shadow: none;
@@ -81,7 +81,7 @@
     text-transform: uppercase;
     text-decoration: none;
 
-    @media (min-width: 1200px) {
+    @media (min-width: 960px) {
       padding-top: 10px;
       padding-bottom: 10px;
 
