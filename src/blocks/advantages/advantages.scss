@@ -21,16 +21,25 @@
     background-position: 0 25px;
   }
 
+  @media (min-width: 960px) {
+    padding-top: 14px;
+    background-position: 0 -15px;
+  }
+
   &__inner {
     @include container(
       $xs-grid-gutter: 40px,
       $sm-grid-gutter: 40px,
-      $md-grid-gutter: 40px
+      $md-grid-gutter: 40px,
+      $lg-grid-gutter: 40px,
+      $xl-grid-gutter: 20px
     );
     @include row(
       $xs-grid-gutter: 0,
       $sm-grid-gutter: 0,
-      $md-grid-gutter: 0
+      $md-grid-gutter: 0,
+      $lg-grid-gutter: 0,
+      $xl-grid-gutter: 0
     );
 
     justify-content: center;
@@ -54,6 +63,13 @@
     @media (min-width: 660px) {
       padding-top: 50px;
     }
+
+    @media (min-width: 960px) {
+      @include col(lg, 12, 12, 0);
+      @include row($md-grid-gutter: 0);
+
+      padding-top: 0;
+    }
   }
 
   &__item {
@@ -61,6 +77,12 @@
 
     @media (min-width: 660px) {
       margin-bottom: 35px;
+    }
+
+    @media (min-width: 960px) {
+      @include col(lg, 4, 12, 6%);
+
+      text-align: center;
     }
 
     &:last-of-type {
@@ -75,26 +97,54 @@
     line-height: 24px;
     font-weight: 700;
     color: $black;
+
+    @media (min-width: 960px) {
+      margin-bottom: 24px;
+
+      font-size: 30px;
+      line-height: 30px;
+    }
   }
 
   &__text {
     font-size: 14px;
     line-height: 24px;
 
-    @media (min-width: 660px) {
-      // white-space: nowrap;
+    @media (min-width: 960px) {
+      font-size: 18px;
+      line-height: 30px;
     }
   }
 
-  &__picture {
+  &__pictures {
     @include col(
       $screen: md,
       $column: 6,
       $gutter: 0
     );
 
+    @include col(lg, 12, 12, 0);
+
     @media (min-width: 660px) {
       order: -1;
+    }
+
+    @media (min-width: 960px) {
+      @include row($lg-grid-gutter: 0);
+    }
+  }
+
+  &__picture {
+    display: none;
+
+    @media (min-width: 960px) {
+      @include col(lg, 4, 12, 0);
+
+      display: block;
+    }
+
+    &:last-of-type {
+      display: block;
     }
   }
 
@@ -107,6 +157,12 @@
       max-width: 100%;
       height: 547px;
       margin-bottom: -72px;
+    }
+
+    @media (min-width: 960px) {
+      width: 300px;
+      height: 320px;
+      margin-bottom: 0;
     }
   }
 }

@@ -32,8 +32,20 @@ mixin advantages(text, mods)
         .advantages__item
           h2.advantages__title Заводит новых друзей
           p.advantages__text Ставьте лайки, комментируйте, делитесь фотографиями с друзьями и заводите новых
-
-      picture.advantages__picture
-        source(media='(min-width: 660px)', srcset='img/img-iphone-screen-tablet.png')
-        img.advantages__img(alt='iPhone screen', src='img/img-iphone-screen-mobile.png', width='157', height='320')
+      ///.advantages__items
+      .advantages__pictures
+        picture.advantages__picture
+          source(media='(min-width: 960px)', srcset='img/img-iphone-screen-01-desktop.png')
+          img.advantages__img(alt='iPhone screen', src='img/img/img-iphone-screen-01-desktop.png', width='300', height='320')
+        picture.advantages__picture
+          source(media='(min-width: 960px)', srcset='img/img-iphone-screen-02-desktop.png')
+          img.advantages__img(alt='iPhone screen', src='img/img/img-iphone-screen-02-desktop.png', width='300', height='320')
+        picture.advantages__picture
+          source(media='(min-width: 960px)', srcset='img/img-iphone-screen-03-desktop.png')
+          source(media='(min-width: 660px)', srcset='img/img-iphone-screen-tablet.png')
+          img.advantages__img(alt='iPhone screen', src='img/img-iphone-screen-mobile.png', width='157', height='320')
+      ///.advantages__pictures
       block
+
+    ///.advantages__inner
+  ///.advantages
