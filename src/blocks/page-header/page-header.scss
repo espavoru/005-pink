@@ -16,8 +16,16 @@
       $sm-grid-gutter: 40px,
       $md-grid-gutter: 40px,
       $lg-grid-gutter: 40px,
+      $xl-grid-gutter: 20px,
     );
 
     position: relative;
+  }
+
+  &__grid {
+
+    @media (min-width: 1200px) {
+      @include row($xl-grid-gutter: 0);
+    }
   }
 }

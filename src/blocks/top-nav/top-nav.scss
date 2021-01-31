@@ -10,6 +10,12 @@
   transition: all $transition-time;
   box-shadow: 0 -1px 0 0 #000000;
 
+  @media (min-width: 1200px) {
+    @include col(xl, 10, 12, 0);
+
+    display: flex;
+  }
+
   &__toggler {
     position: absolute;
     top: 16px;
@@ -18,6 +24,10 @@
 
     @media (min-width: 660px) {
       top: 35px;
+    }
+
+    @media (min-width: 1200px) {
+      display: none;
     }
 
     .top-nav--open & {
@@ -34,11 +44,28 @@
     padding: 0;
 
     list-style: none;
+
+    @media (min-width: 1200px) {
+      display: flex;
+      flex-basis: 100%;
+      align-items: center;
+      justify-content: flex-end;
+    }
   }
 
   &__item {
     margin-bottom: 1px;
     box-shadow: 0 1px 0 0 #000000, inset 0 1px 0 0 rgba(255, 255, 255, 0.15);
+
+    @media (min-width: 1200px) {
+      margin-bottom: 0;
+      margin-left: 80px;
+      box-shadow: none;
+
+      &:first-of-type {
+        margin-left: 0;
+      }
+    }
   }
 
   &__link {
@@ -53,6 +80,30 @@
     text-align: center;
     text-transform: uppercase;
     text-decoration: none;
+
+    @media (min-width: 1200px) {
+      padding-top: 10px;
+      padding-bottom: 10px;
+
+      font-size: 18px;
+      line-height: 18px;
+      font-weight: 500;
+      text-transform: none;
+
+      &:focus,
+      &:active {
+        color: $white;
+        opacity: 0.3;
+      }
+
+      &:hover {
+        color: $text-color-accent;
+      }
+
+      &--active {
+        border-bottom: 2px solid $white;
+      }
+    }
   }
 
   &--open {

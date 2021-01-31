@@ -21,9 +21,11 @@ mixin top-nav(text, mods)
   nav.top-nav#nav(class=allMods)&attributes(attributes)
     ul.top-nav__list
       li.top-nav__item
-        a.top-nav__link(href='index.html') Главная
+        a.top-nav__link.top-nav__link--active(href='index.html') Главная
       li.top-nav__item
         a.top-nav__link(href='photos.html') Фотографии
       li.top-nav__item
         a.top-nav__link(href='contest.html') Конкурс
-      block
+    ///.top-nav__list
+    block
+  // /.top-nav

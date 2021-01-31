@@ -37,6 +37,12 @@
       url('../img/img-mockup-iphone-6-mobile.png') no-repeat 0 172px,
       url('../img/img-screen-01-mobile.jpg') no-repeat 104px 205px;
 
+    @media (min-width: 480px) {
+      background:
+        url('../img/img-mockup-iphone-6-mobile.png') no-repeat 100px 172px,
+        url('../img/img-screen-01-mobile.jpg') no-repeat 204px 205px;
+    }
+
     @media (min-width: 660px) {
       padding-top: 0;
 
