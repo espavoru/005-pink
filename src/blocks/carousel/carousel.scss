@@ -17,14 +17,6 @@
     @include row($lg-grid-gutter: 0);
   }
 
-  & button {
-    display: none;
-
-    @media (min-width: 960px) {
-      display: block;
-    }
-  }
-
   &__items {
     display: flex;
     margin: 0;
@@ -93,6 +85,7 @@
   &__next {
     @include col(lg, 1, 12, 0);
 
+    display: none;
     order: -1;
     margin-top: -105px;
     border: none;
@@ -102,6 +95,10 @@
 
     background: 0 center no-repeat url('data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAABYAAAApCAYAAAAxmNlDAAABEUlEQVRIia3XzQ3CMAwF4AdiAFbgxjFcuHNgj3aydBNGoBuwAiOgoFiy3DQ/tnNJpUZfXbVJXg7X+xOO7QzgBSAcHdEA4JP71QsOudJU8Qrg4QFvUABfK1xE0w0LvIta4CqqhTm6ALhJVANLdN4bOAJPAN496Aic0Jivm2gvPIz2wCq0BavRGmxCUzs10DnDw01W7ILKimOGzShYxa4owe4owYQuXijBhE3sIS4wf/3ohdPHc8f5fzyzGWbG5QRZvPDSWiHxWBijgiU+afDasmnCWwu9Gu/ZmlR472Y6jI9s/zycNPHRwMLjVBXXRCyJU4gxwxLnscsMN3Fr8N7FPY4KRdzrcLPBPY9jCb/8eyD8AJofXfjvZhDqAAAAAElFTkSuQmCC');
     opacity: 0.6;
+
+    @media (min-width: 960px) {
+      display: block;
+    }
 
     &:hover {
       opacity: 0.3;
