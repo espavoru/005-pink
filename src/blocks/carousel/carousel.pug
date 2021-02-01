@@ -26,10 +26,13 @@ mixin carousel(id, items, mods)
 
       if id == 'price'
         +price-items()
-
+    ///.carousel__items
     .carousel__togglers
       - let n = 0
       while n < items
         i.carousel__toggler= ++n
 
+    button.carousel__prev Previous
+    button.carousel__next Next
     block
+  ///.carousel

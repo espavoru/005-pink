@@ -12,11 +12,19 @@
     padding-top: 65px;
   }
 
+  @media (min-width: 960px) {
+    padding-top: 186px;
+
+    background: center 73px no-repeat url('../img/icon-bg-quotes-desktop.png');
+  }
+
   &__inner {
     @include container(
       $xs-grid-gutter: 40px,
       $sm-grid-gutter: 40px,
-      $md-grid-gutter: 40px
+      $md-grid-gutter: 40px,
+      $lg-grid-gutter: 20px,
+      $xl-grid-gutter: 20px
     );
 
     max-width: 280px;
@@ -45,6 +53,10 @@
 
       font-size: 20px;
     }
+
+    @media (min-width: 960px) {
+      font-size: 24px;
+    }
   }
 
   & .carousel__item-info {
@@ -55,6 +67,10 @@
 
       font-size: 14px;
       line-height: 30px;
+    }
+
+    @media (min-width: 960px) {
+      font-size: 18px;
     }
   }
 
