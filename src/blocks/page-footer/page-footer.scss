@@ -14,6 +14,11 @@
     padding-bottom: 30px;
   }
 
+  @media (min-width: 960px) {
+    padding-top: 70px;
+    padding-bottom: 70px;
+  }
+
   & .logo {
     @include col(
       $screen: md,
@@ -64,12 +69,16 @@
     @include container(
       $xs-grid-gutter: 0,
       $sm-grid-gutter: 0,
-      $md-grid-gutter: 40px
+      $md-grid-gutter: 40px,
+      $lg-grid-gutter: 20px,
+      $xl-grid-gutter: 20px
     );
     @include row(
       $xs-grid-gutter: 0,
       $sm-grid-gutter: 0,
-      $md-grid-gutter: 0
+      $md-grid-gutter: 0,
+      $lg-grid-gutter: 0,
+      $xl-grid-gutter: 0
     );
   }
 
@@ -77,12 +86,17 @@
     @include col(
       $screen: md,
       $column: 3,
-      $gutter: 60px
+      $gutter: 0
     );
 
     display: flex;
     align-items: center;
+    justify-content: flex-end;
 
     background: no-repeat 100% center url('../img/icon-htmlacademy-tablet.png');
+
+    @media (min-width: 660px) {
+      padding-right: 40px;
+    }
   }
 }
