@@ -1,4 +1,4 @@
-const Carousel = (options) => {
+const carousel = (options) => {
   const items = document.querySelectorAll(`${options.cls} .carousel__item`);
   const togglers = document.querySelectorAll(`${options.cls} .carousel__toggler`);
   let i = 0;
@@ -22,11 +22,22 @@ const Carousel = (options) => {
     togglers[i].classList.add('carousel__toggler--active');
   };
 
+  const showPrevSlide = () => {
+    i--;
+    if (i < 0) i = items.length - 1;
+
+    items.forEach(item => {
+      item.classList.remove('carousel__item--active');
+    })
+
+    items[i].classList.add('carousel__item--active');
+  }
+
   const clickHandler = (e) => {
     if (e.target.closest(`${options.cls} .carousel__toggler`)) {
       if (e.target.classList.contains('carousel__toggler--active')) return;
 
-      const showSlide = () => {
+      const togglersHandler = () => {
         e.target.classList.add('carousel__toggler--active');
 
         togglers.forEach((toggle, i) => {
@@ -44,14 +55,14 @@ const Carousel = (options) => {
         item.classList.remove('carousel__item--active');
       })
 
-      showSlide();
+      togglersHandler();
     }
 
-    if (e.target.closest(`${options.cls} .carousel__item`)) {
-      showNextSlide();
-    }
+    if (e.target.closest(`${options.cls} .carousel__item`)) showNextSlide();
 
+    if (e.target.closest(`${options.cls} .carousel__next`)) showNextSlide();
 
+    if (e.target.closest(`${options.cls} .carousel__prev`)) showPrevSlide();
   };
 
   if (options.autoSlide) {
@@ -67,7 +78,7 @@ const reviewSliderOptions = {
   'cls': '.review',
   'autoSlide': false
 };
-Carousel(reviewSliderOptions);
+carousel(reviewSliderOptions);
 
 const priceSliderOptions = {'cls': '.price'};
-Carousel(priceSliderOptions);
+carousel(priceSliderOptions);
