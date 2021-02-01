@@ -82,7 +82,12 @@
     @media (min-width: 960px) {
       @include col(lg, 4, 12, 6%);
 
+      margin-bottom: 0;
       text-align: center;
+
+      &:last-of-type {
+        margin-bottom: 0;
+      }
     }
 
     &:last-of-type {
