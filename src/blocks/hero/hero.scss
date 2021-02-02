@@ -11,16 +11,23 @@
   overflow: hidden;
 
   background-image: url('../img/bg-hero-mobile.jpg');
+  background-image: image-set('../img/bg-hero-mobile-00-@2x.jpg' 2x, '../img/bg-hero-mobile.jpg' 1x); // stylelint-disable-line
   background-repeat: no-repeat;
   background-position: center 0;
-  background-size: contain;
+  background-size: cover;
 
   @media (min-width: 500px) {
     background-size: cover;
   }
 
   @media (min-width: 660px) {
+    /* stylelint-disable */
     background-image: url('../img/bg-hero-tablet.jpg');
+    background-image: image-set(
+      '../img/bg-hero-desktop.jpg' 2x,
+      '../img/bg-hero-tablet.jpg' 1x
+    );
+    /* stylelint-enable */
   }
 
   @media (min-width: 1200px) {
@@ -38,9 +45,15 @@
 
     padding-top: 460px;
 
-    background:
-      url('../img/img-mockup-iphone-6-mobile.png') no-repeat 0 172px,
-      url('../img/img-screen-01-mobile.jpg') no-repeat 104px 205px;
+    /* stylelint-disable */
+    background-image: image-set(
+      '../img/img-mockup-iphone-6@2x.png' 2x,
+      '../img/img-mockup-iphone-6-320w.png' 1x
+    );
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    /* stylelint-enable */
 
     @media (min-width: 480px) {
       background:
