@@ -78,7 +78,14 @@ $container-sm:                100%;
 $container-md:                $screen-md;
 $container-lg:                $screen-lg - 20;
 $container-xl:                $screen-xl - 240;
-$container-xxl:               $screen-xxl - 30;
+$container-xxl:               $screen-xxl - 840;
+
+
+
+// Retina
+
+$retina-dpi:                  144dpi;
+$retina-dppx:                 1.5dppx;
 
 
 

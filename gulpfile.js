@@ -307,7 +307,8 @@ function buildJs() {
   return src(`${dir.src}js/entry.js`)
     .pipe(plumber())
     .pipe(webpackStream({
-      mode: 'production',
+      mode: 'development',
+      // mode: 'production',
       entry: entryList,
       output: {
         filename: '[name].js',

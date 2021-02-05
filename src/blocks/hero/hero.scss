@@ -10,28 +10,33 @@
   min-height: 460px;
   overflow: hidden;
 
-  background-image: url('../img/bg-hero-mobile.jpg');
-  background-image: image-set('../img/bg-hero-mobile-00-@2x.jpg' 2x, '../img/bg-hero-mobile.jpg' 1x); // stylelint-disable-line
   background-repeat: no-repeat;
   background-position: center 0;
   background-size: cover;
 
-  @media (min-width: 500px) {
-    background-size: cover;
+  @media (min-width: $screen-xs) {
+    background-image: url('../img/bg-hero-mobile.jpg');
+
+    @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+      background-image: url('../img/bg-hero-mobile@2x.jpg');
+    }
   }
 
-  @media (min-width: 660px) {
-    /* stylelint-disable */
-    background-image: url('../img/bg-hero-tablet.jpg');
-    background-image: image-set(
-      '../img/bg-hero-desktop.jpg' 2x,
-      '../img/bg-hero-tablet.jpg' 1x
-    );
-    /* stylelint-enable */
+
+  @media (min-width: $screen-md) {
+    background-image: url('../img/bg-hero-tablet@1x.jpg');
+
+    @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+      background-image: url('../img/bg-hero-tablet@2x.jpg');
+    }
   }
 
   @media (min-width: 1200px) {
     background-image: url('../img/bg-hero-desktop.jpg');
+
+    @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+      background-image: url('../img/bg-hero-desktop@2x.jpg');
+    }
   }
 
   &__inner {
@@ -46,37 +51,50 @@
     padding-top: 460px;
 
     /* stylelint-disable */
-    background-image: image-set(
-      '../img/img-mockup-iphone-6@2x.png' 2x,
-      '../img/img-mockup-iphone-6-320w.png' 1x
-    );
     background-position: center;
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: 320px auto;
     /* stylelint-enable */
 
+    @media (min-width: $screen-xs) {
+      background-image: url('../img/img-mockup-iphone-6-320w.png');
+
+      @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+        background-image: url('../img/img-mockup-iphone-6-640w.png');
+      }
+    }
+
     @media (min-width: 480px) {
-      background:
-        url('../img/img-mockup-iphone-6-mobile.png') no-repeat 100px 172px,
-        url('../img/img-screen-01-mobile.jpg') no-repeat 204px 205px;
+      background-image: url('../img/img-mockup-iphone-6-640w.png');
+      background-size: 480px auto;
+
+      @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+        background-image: url('../img/img-mockup-iphone-6-desktop.png');
+      }
     }
 
     @media (min-width: 660px) {
       padding-top: 0;
 
-      background:
-        url('../img/img-mockup-iphone-6-tablet.png') no-repeat 0 185px,
-        url('../img/img-screen-01-tablet.jpg') no-repeat 371px 239px;
+      background-image: url('../img/img-mockup-iphone-6-desktop.png');
+      background-size: contain;
+      background-position: bottom;
+
+      @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+        background-image: url('../img/img-mockup-iphone-6-desktop@2x.png');
+      }
     }
 
-    @media (min-width: 960px) {
-      background:
-        url('../img/img-mockup-iphone-6-tablet.png') no-repeat 200px 185px,
-        url('../img/img-screen-01-tablet.jpg') no-repeat 571px 239px;
+    @media (min-width: $screen-lg) {
+      background-size: 85%;
     }
 
     @media (min-width: 1200px) {
-      background: url('../img/img-mockup-iphone-6-desktop.png') no-repeat -28% bottom;
+      background-image: url('../img/img-mockup-iphone-6-desktop.png');
+
+      @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+        background-image: url('../img/img-mockup-iphone-6-desktop@2x.png');
+      }
     }
   }
 }
