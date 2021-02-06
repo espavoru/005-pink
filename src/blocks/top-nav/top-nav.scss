@@ -90,7 +90,6 @@
       font-weight: 500;
       text-transform: none;
 
-      &:focus,
       &:active {
         color: $white;
         opacity: 0.3;
@@ -98,6 +97,10 @@
 
       &:hover {
         color: $text-color-accent;
+      }
+
+      &:focus {
+        color: $white;
       }
 
       &--active {
