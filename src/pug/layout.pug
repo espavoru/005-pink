@@ -1,9 +1,11 @@
 //- Стандартный шаблон страницы
+block config
+  include config.pug
 
 include mixins.pug
 
 doctype html
-html(class='page  no-js', lang='ru')
+html(class='page  no-js', lang=lang)
 
   head
     meta(charset='utf-8')
@@ -26,13 +28,17 @@ html(class='page  no-js', lang='ru')
     //- meta(name='apple-mobile-web-app-status-bar-style', content='#000')
 
     block meta
-      title Home
+      title #{currentTitle} | Pink
+      meta(name='description', content=currentDescription)
 
     block fonts
-      link(rel='preconnect', href='https://fonts.gstatic.com')
-      link(rel='stylesheet', href='https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap')
+      if GoogleFonts
+        link(rel='preconnect', href='https://fonts.gstatic.com')
+        link(rel='stylesheet', href=`https://fonts.googleapis.com/css2?family=${GoogleFonts}:wght@${fontWeight}&display=swap`)
 
     block head
+      if Bootstrap4
+        //- link for Bootstrap 4 css styles
       link(rel='stylesheet', href='css/style.css')
       script
         include ../js/head-script.js
@@ -56,10 +62,12 @@ html(class='page  no-js', lang='ru')
               +top-nav()
 
         block content
-          p содержимое
+          h1 #{currentTitle}
 
         block footer
           +page-footer()
 
     block page-bottom
+      if Bootstrap4
+        //- link to Bootstrap scripts
       script(src='js/bundle.js')
