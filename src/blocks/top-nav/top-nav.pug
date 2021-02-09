@@ -1,12 +1,12 @@
 //- Все примеси в этом файле должны начинаться c имени блока (top-nav)
 
-mixin top-nav(text, mods)
+mixin top-nav(menuItems, mods)
 
   //- Принимает:
-  //-   text    {string} - текст
+  //-   menuItems    {array} - menu data (title, href)
   //-   mods    {string} - список модификаторов
   //- Вызов:
-        +top-nav('Текст', 'some-mod')
+    +top-nav([{'title': 'Главная', 'href': 'index.html'}, {'title': 'Фотографии', 'href': 'photos.html'}, {'title': 'Конкурс', 'href': 'contest.html'}, {'title': 'Контактьі', 'href': 'contacts.html'}])
 
   -
     // список модификаторов
@@ -20,12 +20,11 @@ mixin top-nav(text, mods)
 
   nav.top-nav#nav(class=allMods)&attributes(attributes)
     ul.top-nav__list
-      li.top-nav__item
-        a.top-nav__link.top-nav__link--active(href='index.html') Главная
-      li.top-nav__item
-        a.top-nav__link(href='photos.html') Фотографии
-      li.top-nav__item
-        a.top-nav__link(href='contest.html') Конкурс
-    ///.top-nav__list
+      each item in menuItems
+        li.top-nav__item
+          a.top-nav__link(
+            href=item.href
+            class={'top-nav__link--active' : currentUrl == item.href}) #{item.title}
+    // /.top-nav__list
     block
   // /.top-nav

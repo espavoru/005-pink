@@ -2,7 +2,6 @@
   const menuLinks = document.querySelectorAll('.top-nav__link');
 
   const clickHandler = e => {
-    e.preventDefault();
 
     if (e.target.closest('.top-nav__link')) {
       if (!menuLinks.length) return;

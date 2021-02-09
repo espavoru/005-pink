@@ -39,6 +39,7 @@ html(class='page  no-js', lang=lang)
     block head
       if Bootstrap4
         //- link for Bootstrap 4 css styles
+
       link(rel='stylesheet', href='css/style.css')
       script
         include ../js/head-script.js
@@ -59,7 +60,7 @@ html(class='page  no-js', lang=lang)
             +burger('Toggle mobile menu', 'page-header', 'top-nav--open')(class='top-nav__toggler')
 
             block nav
-              +top-nav()
+              +top-nav([{'title': 'Главная', 'href': 'index.html'}, {'title': 'Фотографии', 'href': 'photos.html'}, {'title': 'Конкурс', 'href': 'contest.html'}])
 
         block content
           h1 #{currentTitle}
