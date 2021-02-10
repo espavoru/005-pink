@@ -35,15 +35,25 @@ mixin advantages(text, mods)
       ///.advantages__items
       .advantages__pictures
         picture.advantages__picture
+          source(media='(min-width: 960px)', type='image/webp', srcset='img/img-iphone-screen-01-desktop.webp, img/img-iphone-screen-01-desktop2x.webp 2x')
           source(media='(min-width: 960px)', srcset='img/img-iphone-screen-01-desktop.png, img/img-iphone-screen-01-desktop2x.png 2x')
           img.advantages__img(alt='iPhone screen', src='img/img-iphone-screen-01-desktop.png', width='300', height='320')
         picture.advantages__picture
+          source(media='(min-width: 960px)', type='image/webp', srcset='img/img-iphone-screen-02-desktop.webp, img/img-iphone-screen-02-desktop2x.webp 2x')
           source(media='(min-width: 960px)', srcset='img/img-iphone-screen-02-desktop.png, img/img-iphone-screen-02-desktop@2x.png 2x')
           img.advantages__img(alt='iPhone screen', src='img/img-iphone-screen-02-desktop.png', width='300', height='320')
         picture.advantages__picture
-          source(media='(min-width: 960px)', srcset='img/img-iphone-screen-03-desktop.png, img/img-iphone-screen-03-desktop2x.png 2x')
-          source(media='(min-width: 660px)', srcset='img/img-iphone-screen-tablet.png, img/img-iphone-screen-tablet2x.png 2x')
-          img.advantages__img(alt='iPhone screen', width='157', height='320', src='img/img-iphone-screen-mobile.png', srcset='img/img-iphone-screen-mobile@2x.png 2x')
+          source(media='(min-width: 960px)', type='image/webp', srcset='img/img-iphone-screen-03-desktop.webp, img/img-iphone-screen-03-desktop2x.webp 2x')
+          source(media='(min-width: 960px)', srcset='img/img-iphone-screen-03-desktop.png, img/img-iphone-screen-03-tablet2x.png 2x')
+          source(media='(min-width: 660px)', type='image/webp', srcset='img/img-iphone-screen-03-tablet.webp, img/img-iphone-screen-03-tablet2x.webp 2x')
+          source(media='(min-width: 660px)', srcset='img/img-iphone-screen-03-tablet.png, img/img-iphone-screen-03-tablet2x.png 2x')
+          source(media='(min-width: 0)', type='image/webp', srcset='img/img-iphone-screen-03-mobile.webp, img/img-iphone-screen-03-mobile@2x.webp 2x')
+          img.advantages__img(
+            alt='iPhone screen',
+            width='157',
+            height='320',
+            src='img/img-iphone-screen-03-mobile.png',
+            srcset='img/img-iphone-screen-03-mobile@2x.png 2x')
       ///.advantages__pictures
       block
 
