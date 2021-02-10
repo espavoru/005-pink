@@ -35,16 +35,20 @@
     );
     @include col(lg, 4, 12, 0);
 
-    background-image: url('../img/img-diagram-tablet@2x.png');
+    background-image: url('../img/img-diagram-desktop.png');
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
 
     @media (min-width: 960px) {
-      background-image: url('../img/img-diagram-desktop.png');
+      background-image: url('../img/img-diagram-desktop.webp');
 
       @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
         background-image: url('../img/img-diagram-desktop@2x.png');
+      }
+
+      .no-webpalpha & {
+        background-image: url('../img/img-diagram-desktop.png');
       }
     }
   }
