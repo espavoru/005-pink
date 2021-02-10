@@ -21,7 +21,9 @@ mixin page-footer(mods)
     .page-footer__inner
       +logo('/')
         picture
-          source(media=`(min-width: 960px)`, srcset=`../img/img-footer-logotype-desktop.png, ../img/img-footer-logotype-desktop@2x.png 2x`)
+          source(media='(min-width: 960px)', type='image/webp', srcset='img/img-footer-logotype-desktop.webp, img/img-footer-logotype-desktop@2x.webp 2x')
+          source(media='(min-width: 960px)', srcset='../img/img-footer-logotype-desktop.png, ../img/img-footer-logotype-desktop@2x.png 2x')
+          source(media='(min-width: 0)', type='image/webp', srcset='img/img-footer-logotype-tablet.webp, img/img-footer-logotype-tablet@2x.webp 2x')
           img(alt='Logo', width='147', height='40', src='../img/img-footer-logotype-tablet.png', srcset='../img/img-footer-logotype-tablet@2x.png 2x')
       ///.logo
       +social()
