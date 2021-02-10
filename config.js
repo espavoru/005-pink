@@ -8,6 +8,7 @@ let config = {
     'no-js',
   ],
   'alwaysAddBlocks': [
+    'modernizr',
     // 'sprite-svg',
     // 'sprite-png',
     // 'object-fit-polyfill',
