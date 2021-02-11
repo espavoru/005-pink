@@ -1,0 +1,59 @@
+//- Все примеси в этом файле должны начинаться c имени блока (post)
+
+mixin post(data, mods)
+  //- Принимает:
+  //- data {
+  //-   url:     {string},  - адрес для ссылки
+  //-   img:     {string},  - адрес изображения поста
+  //-   name:    {string},  - имя автора
+  //-   time:    {string},  - время поста
+  //-   likes:   {number},  - кол-во лайков
+  //-   descr:   {string},  - описание поста
+  //-   accent:  {boolean}, - сделать пост главным
+  //- }
+  //- mods {string}       - модификаторы
+  //- Вызов:
+        +post({
+          url: 'post01',
+          img: 'img/user-img.jpg',
+          name: 'Татьяна',
+          time: '5 часов назад',
+          likes: '356',
+          descr: 'post descr',
+          accent: true,
+        }, 'mod')
+        +post({
+          img: 'img/demo-img.jpg',
+          name: 'Геннадий',
+          likes: 120,
+        })
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' post--' + modsList[i].trim();
+      }
+    }
+
+  article.post(class=allMods)&attributes(attributes)
+    .post__inner
+      a.post__img-wrap(href=data.url)
+        picture
+          source(media='(min-width: 960px)', type='image/webp', srcset=`img/${data.img}-xl.webp, img/${data.img}-xl@2x.webp 2x`)
+          source(media='(min-width: 960px)', type='image/jpg', srcset=`img/${data.img}-xl.jpg, img/${data.img}-xl@2x.jpg 2x`)
+          source(media='(min-width: 660px)', type='image/webp', srcset=`img/${data.img}-md.webp, img/${data.img}-md@2x.webp 2x`)
+          source(media='(min-width: 660px)', type='image/jpg', srcset=`img/${data.img}-md.jpg, img/${data.img}-md@2x.jpg 2x`)
+          source(media='(min-width: 0)', type='image/webp', srcset=`img/${data.img}-xs.webp, img/${data.img}-xs@2x.webp 2x`)
+          img.post__img(alt=data.descr, width='auto', src=`img/${data.img}-xs.jpg`, srcset=`img/${data.img}-xs@2x.jpg`)
+      blockquote.post__content
+        cite.post__author-name= data.name
+        time.post__time(datetime='2021-02-11')= `(${data.time})`
+        p.post__description= data.descr
+        p.post__likes= `Нравится: ${data.likes}`
+          i.post__likes-icon Нравится
+      ///.post__content
+    ///.post__inner
+  ///.post
