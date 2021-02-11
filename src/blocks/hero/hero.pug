@@ -20,7 +20,11 @@ mixin hero(text, mods)
 
   section.hero(class=allMods)&attributes(attributes)
     .hero__inner
-      +download('Get App')
-      block
+      if currentUrl == 'index.html'
+        +download('Get App')
+        block
+
+      if currentUrl == 'photos.html'
+        h1.hero__title Фотографии#[br]пользователей
     ///.hero__inner
   ///.hero
