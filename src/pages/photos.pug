@@ -1,9 +1,10 @@
 extends ../pug/layout.pug
 
 append config
-  - var currentTitle = 'Фото'
-  - var currentDescription = 'Users fotos'
-  - var currentUrl = 'photos.html'
+  -
+    currentTitle = 'Фото'
+    currentDescription = 'Users fotos'
+    currentUrl = 'photos.html'
 
 
 block content
@@ -11,3 +12,5 @@ block content
   +hero('Photos hero')
 
   +gallery()
+
+  +upload()

@@ -1,0 +1,31 @@
+//- Все примеси в этом файле должны начинаться c имени блока (upload)
+
+mixin upload(data, mods)
+
+  //- Принимает:
+  //-   data    {object} - данные
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +upload({url: '#'}, 'some-mod')
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' upload--' + modsList[i].trim();
+      }
+    }
+
+  section.upload(class=allMods)&attributes(attributes)
+    .upload__inner
+      p.upload__text.
+        Затмите их всех!
+        <br>
+        Выкладывайте все, что накопилось в телефоне!
+
+      +picture({'img': 'img-upload-01', 'lg': false})
+
+    ///.upload__inner
+  ///.upload
