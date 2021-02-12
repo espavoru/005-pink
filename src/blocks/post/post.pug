@@ -53,7 +53,8 @@ mixin post(data, mods)
         time.post__time(datetime='2021-02-11')= `(${data.time})`
         p.post__description= data.descr
         p.post__likes= `Нравится: ${data.likes}`
-          i.post__likes-icon Нравится
+          svg.post__likes-icon Нравится
+            use(xlink:href='img/sprite.svg#heart')
       ///.post__content
     ///.post__inner
   ///.post

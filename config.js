@@ -9,7 +9,7 @@ let config = {
   ],
   'alwaysAddBlocks': [
     'modernizr',
-    // 'sprite-svg',
+    'sprite-svg',
     // 'sprite-png',
     // 'object-fit-polyfill',
   ],

@@ -5,4 +5,27 @@
 .gallery {
 
   $block-name:                &; // #{$block-name}__element
+
+  position: relative;
+
+  &__inner {
+    @include container(
+      $xs-grid-gutter: 40px,
+      $sm-grid-gutter: 0,
+      $md-grid-gutter: 0
+    );
+  }
+
+  &__grid {
+    @include row($xs-grid-gutter: 20px);
+  }
+
+  &__text {
+    margin-bottom: 49px;
+    padding-top: 44px;
+
+    font-size: 14px;
+    line-height: 30px;
+    text-align: center;
+  }
 }

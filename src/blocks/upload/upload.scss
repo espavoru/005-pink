@@ -5,4 +5,18 @@
 .upload {
 
   $block-name:                &; // #{$block-name}__element
+
+  background-color: $gray-lightest;
+
+  &__text {
+    margin-bottom: 20px;
+    padding-top: 23px;
+    padding-bottom: 42px;
+
+    font-size: 14px;
+    line-height: 30px;
+    text-align: center;
+
+    background-color: $white;
+  }
 }
