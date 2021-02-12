@@ -1,0 +1,33 @@
+//- Все примеси в этом файле должны начинаться c имени блока (picture)
+
+mixin picture(data, mods)
+
+  //- Принимает:
+  //-   data    {object} - данные
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +picture('Текст', 'some-mod')
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' picture--' + modsList[i].trim();
+      }
+    }
+    data = data || {}
+    data.img = data.img || 'test'
+    data.lg = typeof(data.lg) == 'undefined' ? true : data.lg
+    data.md = typeof(data.md) == 'undefined' ? true : data.md
+
+  picture.picture(class=allMods)&attributes(attributes)
+    if (typeof(data.lg) !== 'undefined' && data.lg)
+      source(media=`(min-width: ${screenLg})`, type='image/webp', srcset=`img/${data.img}-lg.webp, img/${data.img}-lg@2x.webp 2x`)
+      source(media=`(min-width: ${screenLg})`, type='image/jpg', srcset=`img/${data.img}-lg.jpg, img/${data.img}-lg@2x.jpg 2x`)
+    if (typeof(data.md) !== 'undefined' && data.md)
+      source(media=`(min-width: ${screenMd})`, type='image/webp', srcset=`img/${data.img}-md.webp, img/${data.img}-md@2x.webp 2x`)
+      source(media=`(min-width: ${screenMd})`, type='image/jpg', srcset=`img/${data.img}-md.jpg, img/${data.img}-md@2x.jpg 2x`)
+    source(media=`(min-width: ${screenSm})`, type='image/webp', srcset=`img/${data.img}-sm.webp, img/${data.img}-sm@2x.webp 2x`)
+    img.upload__img(alt='Img to upload', width='320', src=`img/${data.img}-sm.jpg`, srcset=`img/${data.img}-sm@2x.jpg 2x`)

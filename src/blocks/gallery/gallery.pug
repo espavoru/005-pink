@@ -20,6 +20,11 @@ mixin gallery(text, mods)
 
   section.gallery(class=allMods)&attributes(attributes)
     .gallery__inner
+      p.gallery__text.
+        Взгляните на фотографии, которые выкладывают пользователи!
+        <br>
+        Видите, как не хватает ваших?
+
       +post({
           url: '#',
           img: 'img-post-01',
