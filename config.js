@@ -39,7 +39,7 @@ let config = {
     'blocks': 'src/blocks/'
   },
   'optionsGHpages': {
-    'remote': 'quiz-app', // options for github-pages
+    'remote': 'pink', // options for github-pages
   }
 };
 

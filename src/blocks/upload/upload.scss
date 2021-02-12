@@ -6,17 +6,145 @@
 
   $block-name:                &; // #{$block-name}__element
 
-  background-color: $gray-lightest;
+
+  & .picture {
+    display: block;
+    padding-top: 20px;
+    padding-right: 20px;
+    padding-left: 20px;
+    background-color: $gray-lightest;
+  }
+
+  & .field-range {
+    @include col(xs, 4, 12, 0);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 72px;
+
+    &::after {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 161px;
+      right: 0;
+      left: 0;
+
+      border-bottom: 1px solid rgba($color: $text-color, $alpha: 0.05);
+    }
+  }
+
+  & .field-range--crop {
+    padding-left: 22px;
+  }
+
+  & .field-range--contrast {
+    padding-right: 30px;
+  }
+
+  & .field-range__name {
+    display: inline-block;
+    width: 48px;
+    height: 44px;
+    margin-bottom: 3px;
+
+    text-indent: -999rem;
+
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  & .field-range__input-wrap {
+    position: absolute;
+    top: 109px;
+    right: 42px;
+    left: 38px;
+  }
+
+  &__inner {
+    @include container(
+      $xs-grid-gutter: 0,
+      $sm-grid-gutter: 0,
+      $md-grid-gutter: 0
+    );
+
+    @include row($xs-grid-gutter: 0);
+  }
 
   &__text {
-    margin-bottom: 20px;
+    margin-bottom: 0;
     padding-top: 23px;
     padding-bottom: 42px;
 
     font-size: 14px;
     line-height: 30px;
     text-align: center;
+  }
 
-    background-color: $white;
+  &__img {
+    display: block;
+  }
+
+  &__form {
+    @include row($xs-grid-gutter: 0);
+
+    position: relative;
+    padding-bottom: 41px;
+    padding-top: 42px;
+    padding-right: 20px;
+    padding-left: 20px;
+    background-color: $gray-lightest;
+  }
+
+  &__btn-cancel,
+  &__btn-submit {
+    margin-top: 23px;
+    margin-bottom: 12px;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    border: 3px solid $text-color-accent;
+    border-radius: 30px;
+
+    font-size: 18px;
+    line-height: 18px;
+    font-weight: 700;
+    letter-spacing: 0.7px;
+    color: $text-color-accent;
+    transition: all $transition-time;
+
+    &:hover {
+      color: $white;
+      background-color: $text-color-accent;
+    }
+
+    &:active {
+      color: rgba($color: $white, $alpha: 0.3);
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &__btn-cancel {
+    margin-top: 0;
+    margin-bottom: 0;
+    opacity: 0.1;
+
+    color: $text-color;
+    border-color: $text-color;
+
+    &:hover {
+      opacity: 0.3;
+      color: $text-color;
+      background-color: transparent;
+    }
+
+    &:active {
+      opacity: 0.3;
+      color: $white;
+      background-color: $text-color;
+    }
   }
 }

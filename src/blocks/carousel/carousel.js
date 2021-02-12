@@ -3,6 +3,8 @@ const carousel = (options) => {
   const togglers = document.querySelectorAll(`${options.cls} .carousel__toggler`);
   let i = 0;
 
+  if (!items.length) return;
+
   items[0].classList.add('carousel__item--active');
   togglers[0].classList.add('carousel__toggler--active');
 
