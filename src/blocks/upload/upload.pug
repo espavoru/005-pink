@@ -27,5 +27,42 @@ mixin upload(data, mods)
 
       +picture({'img': 'img-upload-01', 'lg': false})
 
+      form.upload__form
+        +field-range({
+          title: 'Crop',
+          mods: 'crop',
+          attrs: {
+            name: 'crop',
+            min: '1',
+            max: '100',
+            step: '1',
+            value: '40',
+          }
+        })
+        +field-range({
+          title: 'Fill',
+          mods: 'fill',
+          attrs: {
+            name: 'fill',
+            min: '1',
+            max: '100',
+            step: '1',
+            value: '10',
+          }
+        })
+        +field-range({
+          title: 'Contrast',
+          mods: 'contrast',
+          attrs: {
+            name: 'contrast',
+            min: '1',
+            max: '100',
+            step: '1',
+            value: '60',
+          }
+        })
+        button.upload__btn-submit(type='submit') Запостить
+        button.upload__btn-cancel(type='button') Отмена
+      ///.upload__form
     ///.upload__inner
   ///.upload
