@@ -230,12 +230,12 @@ document.addEventListener("DOMContentLoaded", () => {
         <!--/.contacts__inner-->
       </section>
       <!--/.contacts-->
-      <footer class="page-footer" role="contentinfo">
+      <footer class="page-footer page-footer--index" role="contentinfo">
         <div class="page-footer__inner"><a class="logo" href="/">
             <picture>
               <source media="(min-width: 960px)" type="image/webp" srcset="img/img-footer-logotype-desktop.webp, img/img-footer-logotype-desktop@2x.webp 2x" />
               <source media="(min-width: 960px)" srcset="../img/img-footer-logotype-desktop.png, ../img/img-footer-logotype-desktop@2x.png 2x" />
-              <source media="(min-width: 0)" type="image/webp" srcset="img/img-footer-logotype-tablet.webp, img/img-footer-logotype-tablet@2x.webp 2x" /><img alt="Logo" width="147" height="40" src="../img/img-footer-logotype-tablet.png" srcset="../img/img-footer-logotype-tablet@2x.png 2x" />
+              <source media="(min-width: 0)" type="image/webp" srcset="img/img-footer-logotype-tablet.webp, img/img-footer-logotype-tablet@2x.webp 2x" /><img class="page-footer__logo" alt="Logo" width="147" height="40" src="../img/img-footer-logotype-tablet.png" srcset="../img/img-footer-logotype-tablet@2x.png 2x" />
             </picture>
           </a>
           <!--/.logo-->
@@ -251,7 +251,9 @@ document.addEventListener("DOMContentLoaded", () => {
               </a></li>
           </ul>
           <!--/.social-->
-          <div class="page-footer__copyright">Дизайн</div>
+          <div class="page-footer__copyright">Дизайн<svg width="27" height="34">
+              <use xlink:href="img/sprite.svg#htmlacademy"></use>
+            </svg></div>
         </div>
         <!--/.page-footer__inner-->
       </footer>
