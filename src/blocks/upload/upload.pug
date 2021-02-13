@@ -30,7 +30,7 @@ mixin upload(data, mods)
       form.upload__form
         +field-range({
           title: 'Crop',
-          mods: 'crop',
+          mods: 'crop, active',
           attrs: {
             name: 'crop',
             min: '1',
@@ -52,7 +52,7 @@ mixin upload(data, mods)
         })
         +field-range({
           title: 'Contrast',
-          mods: 'contrast, active',
+          mods: 'contrast',
           attrs: {
             name: 'contrast',
             min: '1',

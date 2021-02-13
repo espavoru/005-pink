@@ -17,14 +17,14 @@ mixin page-footer(mods)
       }
     }
 
-  footer.page-footer(class=allMods, role='contentinfo')&attributes(attributes)
+  footer.page-footer(class=[allMods, {'page-footer--index' : currentUrl == 'index.html'}], role='contentinfo')&attributes(attributes)
     .page-footer__inner
       +logo('/')
         picture
           source(media='(min-width: 960px)', type='image/webp', srcset='img/img-footer-logotype-desktop.webp, img/img-footer-logotype-desktop@2x.webp 2x')
           source(media='(min-width: 960px)', srcset='../img/img-footer-logotype-desktop.png, ../img/img-footer-logotype-desktop@2x.png 2x')
           source(media='(min-width: 0)', type='image/webp', srcset='img/img-footer-logotype-tablet.webp, img/img-footer-logotype-tablet@2x.webp 2x')
-          img(alt='Logo', width='147', height='40', src='../img/img-footer-logotype-tablet.png', srcset='../img/img-footer-logotype-tablet@2x.png 2x')
+          img.page-footer__logo(alt='Logo', width='147', height='40', src='../img/img-footer-logotype-tablet.png', srcset='../img/img-footer-logotype-tablet@2x.png 2x')
       ///.logo
       +social()
         +social-link('#', 'tw')(title='Twitor')
@@ -53,6 +53,8 @@ mixin page-footer(mods)
               srcset='data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAaCAYAAACgoey0AAAA80lEQVRIicXWvQ3CMBCG4ZeIARghdJRhA9iAihomATaACYAJyAZhAxALwAgZAR2ckZsoDv7JJ6WxHD2275R48JgsV8CRb17AGdgDNRGTWagkBzbAU8fzWHTWMD4CVrqACzBLBdtZABVw08Ukg00KPX45ha2eShLYJEgf/AObePWBD2yncx+Egk2c+yA0bNLaB7Fgk8Y+iA3bMX0gT5ESNpFdV33An/QB34F5SrgUEJgKPoyM1Qru9F//Syy49UIRGpb6HYBT28RQcKng1fUFH7ixfrHgIBfCLrBz/ULBnevnA3vVzyXy5VpbEwURbKzjUVCANwHbPMvYg3JzAAAAAElFTkSuQmCC 2x')
       ///.social
       .page-footer__copyright Дизайн
+        svg(width='27', height='34')
+          use(xlink:href='img/sprite.svg#htmlacademy')
 
     ///.page-footer__inner
     block
