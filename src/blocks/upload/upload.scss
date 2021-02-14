@@ -8,20 +8,43 @@
 
 
   & .picture {
+    @include col(sm, 6, 12, 0);
+
     display: block;
     padding-top: 20px;
     padding-right: 20px;
     padding-left: 20px;
     background-color: $gray-lightest;
+
+    @media (min-width: $screen-sm) {
+      padding-right: 10px;
+      padding-left: 10px;
+      padding-bottom: 20px;
+    }
+
+    @media (min-width: $screen-md) {
+      padding-top: 57px;
+      padding-bottom: 54px;
+      padding-left: 20px;
+    }
   }
 
   & .field-range {
     @include col(xs, 4, 12, 0);
+    @include col(md, 12, 12, 0);
 
     display: flex;
     align-items: center;
     justify-content: center;
     padding-bottom: 72px;
+
+    @media (min-width: $screen-md) {
+      justify-content: flex-start;
+      margin-bottom: 14px;
+      padding-bottom: 10px;
+
+      border-bottom: 1px solid rgba($color: $text-color, $alpha: 0.2);
+    }
 
     &::after {
       content: '';
@@ -32,11 +55,19 @@
       left: 0;
 
       border-bottom: 1px solid rgba($color: $text-color, $alpha: 0.05);
+
+      @media (min-width: $screen-md) {
+        content: unset;
+      }
     }
   }
 
   & .field-range--crop {
     padding-left: 22px;
+
+    @media (min-width: $screen-md) {
+      padding-left: 0;
+    }
   }
 
   & .field-range--contrast {
@@ -53,6 +84,10 @@
 
     background-repeat: no-repeat;
     background-position: center;
+
+    @media (min-width: $screen-md) {
+      background-position: 3px center;
+    }
   }
 
   & .field-range__input-wrap {
@@ -60,6 +95,13 @@
     top: 109px;
     right: 42px;
     left: 38px;
+
+    @media (min-width: $screen-md) {
+      flex-grow: 1;
+      position: static;
+      padding-right: 20px;
+      padding-left: 7px;
+    }
   }
 
   &__inner {
@@ -80,14 +122,25 @@
     font-size: 14px;
     line-height: 30px;
     text-align: center;
+
+    @media (min-width: $screen-sm) {
+      font-size: 18px;
+    }
+
+    @media (min-width: $screen-md) {
+      margin-bottom: 27px;
+      padding-top: 45px;
+    }
   }
 
   &__img {
     display: block;
+    width: 100%;
   }
 
   &__form {
     @include row($xs-grid-gutter: 0);
+    @include col(sm, 6, 12, 20px);
 
     position: relative;
     padding-bottom: 41px;
@@ -95,10 +148,23 @@
     padding-right: 20px;
     padding-left: 20px;
     background-color: $gray-lightest;
+
+    @media (min-width: $screen-sm) {
+      padding-bottom: 20px;
+    }
+
+    @media (min-width: $screen-md) {
+      align-content: flex-start;
+      align-items: flex-start;
+      padding-top: 56px;
+      padding-right: 20px;
+      padding-left: 35px;
+    }
   }
 
   &__btn-cancel,
   &__btn-submit {
+    height: 55px;
     margin-top: 23px;
     margin-bottom: 12px;
     padding-top: 16px;
@@ -112,6 +178,16 @@
     letter-spacing: 0.7px;
     color: $text-color-accent;
     transition: all $transition-time;
+
+    @media (min-width: $screen-sm) {
+      margin-top: 18px;
+    }
+
+    @media (min-width: $screen-md) {
+      flex-basis: 260px;
+      margin-top: 51px;
+      margin-bottom: 23px;
+    }
 
     &:hover {
       color: $white;
@@ -134,6 +210,15 @@
 
     color: $text-color;
     border-color: $text-color;
+
+    @media (min-width: $screen-sm) {
+      margin-top: 0;
+    }
+
+    @media (min-width: $screen-md) {
+      margin-top: 0;
+      margin-bottom: 0;
+    }
 
     &:hover {
       opacity: 0.3;

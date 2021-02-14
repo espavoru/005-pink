@@ -15,6 +15,9 @@
     };
 
     document.addEventListener('click', clickHandler);
+    document.addEventListener('submit', e => {
+      e.preventDefault();
+    });
   };
 
   uploadTabs();
