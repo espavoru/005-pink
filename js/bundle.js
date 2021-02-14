@@ -170,7 +170,7 @@ eval("(function () {\n  var menuLinks = document.querySelectorAll('.top-nav__lin
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("(function () {\n  var uploadTabs = function uploadTabs() {\n    var tabs = document.querySelectorAll('.field-range');\n    if (!tabs.length) return;\n\n    var clickHandler = function clickHandler(e) {\n      var tab = e.target.closest('.field-range');\n\n      if (tab) {\n        tabs.forEach(function (tab) {\n          tab.classList.remove('field-range--active');\n        });\n        tab.classList.add('field-range--active');\n      }\n    };\n\n    document.addEventListener('click', clickHandler);\n  };\n\n  uploadTabs();\n})();\n\n//# sourceURL=webpack:///./src/blocks/upload/upload.js?");
+eval("(function () {\n  var uploadTabs = function uploadTabs() {\n    var tabs = document.querySelectorAll('.field-range');\n    if (!tabs.length) return;\n\n    var clickHandler = function clickHandler(e) {\n      var tab = e.target.closest('.field-range');\n\n      if (tab) {\n        tabs.forEach(function (tab) {\n          tab.classList.remove('field-range--active');\n        });\n        tab.classList.add('field-range--active');\n      }\n    };\n\n    document.addEventListener('click', clickHandler);\n    document.addEventListener('submit', function (e) {\n      e.preventDefault();\n    });\n  };\n\n  uploadTabs();\n})();\n\n//# sourceURL=webpack:///./src/blocks/upload/upload.js?");
 
 /***/ }),
 
