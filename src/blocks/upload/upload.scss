@@ -27,6 +27,11 @@
       padding-bottom: 54px;
       padding-left: 20px;
     }
+
+    @media (min-width: $screen-lg) {
+      padding-right: 90px;
+      padding-left: 80px;
+    }
   }
 
   & .field-range {
@@ -88,6 +93,10 @@
     @media (min-width: $screen-md) {
       background-position: 3px center;
     }
+
+    @media (min-width: $screen-lg) {
+      width: 85px;
+    }
   }
 
   & .field-range__input-wrap {
@@ -102,13 +111,18 @@
       padding-right: 20px;
       padding-left: 7px;
     }
+
+    @media (min-width: $screen-lg) {
+      padding-right: 30px;
+    }
   }
 
   &__inner {
     @include container(
       $xs-grid-gutter: 0,
       $sm-grid-gutter: 0,
-      $md-grid-gutter: 0
+      $md-grid-gutter: 0,
+      $lg-grid-gutter: 20px
     );
 
     @include row($xs-grid-gutter: 0);
@@ -160,6 +174,12 @@
       padding-right: 20px;
       padding-left: 35px;
     }
+
+    @media (min-width: $screen-lg) {
+      justify-content: space-between;
+      padding-left: 0;
+      padding-right: 60px;
+    }
   }
 
   &__btn-cancel,
@@ -187,6 +207,11 @@
       flex-basis: 260px;
       margin-top: 51px;
       margin-bottom: 23px;
+    }
+
+    @media (min-width: $screen-lg) {
+      flex-basis: calc(180 / 410 * 100%);
+      margin-top: 146px;
     }
 
     &:hover {
@@ -218,6 +243,10 @@
     @media (min-width: $screen-md) {
       margin-top: 0;
       margin-bottom: 0;
+    }
+
+    @media (min-width: $screen-lg) {
+      margin-right: 0;
     }
 
     &:hover {

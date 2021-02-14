@@ -22,6 +22,10 @@
       @media (min-width: $screen-md) {
         background-size: 22px;
       }
+
+      @media (min-width: $screen-lg) {
+        background-size: 44px;
+      }
     }
 
     #{$block-name}--crop.field-range--active & {
@@ -43,6 +47,10 @@
       @media (min-width: $screen-md) {
         background-size: 22px;
       }
+
+      @media (min-width: $screen-lg) {
+        background-size: 44px;
+      }
     }
 
     #{$block-name}--fill.field-range--active & {
@@ -63,6 +71,10 @@
 
       @media (min-width: $screen-md) {
         background-size: 16px;
+      }
+
+      @media (min-width: $screen-lg) {
+        background-size: 32px;
       }
     }
 

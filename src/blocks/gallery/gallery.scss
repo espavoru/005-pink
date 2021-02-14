@@ -12,12 +12,14 @@
     @include container(
       $xs-grid-gutter: 40px,
       $sm-grid-gutter: 0,
-      $md-grid-gutter: 20px
+      $md-grid-gutter: 20px,
+      $lg-grid-gutter: 20px
     );
   }
 
   &__grid {
     @include row($xs-grid-gutter: 20px);
+    @include row($lg-grid-gutter: 20px);
   }
 
   &__text {

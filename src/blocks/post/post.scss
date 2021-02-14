@@ -8,6 +8,7 @@
 
   @include col(xs, 12, 12, 20px);
   @include col(sm, 6, 12, 20px);
+  @include col(lg, 4, 12, 20px);
 
   margin-bottom: 20px;
 
@@ -59,7 +60,11 @@
       }
 
       @media (min-width: $screen-md) {
-        padding-top: 532px;
+        padding-top: 430px;
+      }
+
+      @media (min-width: $screen-lg) {
+        padding-top: 430px;
       }
     }
   }
@@ -114,7 +119,7 @@
       }
 
       @media (min-width: $screen-md) {
-        max-height: 509px;
+        max-height: 405px;
       }
     }
   }
@@ -181,6 +186,7 @@
 
   &--accent {
     @include col(sm, 12, 12, 20px);
+    @include col(lg, 12, 12, 20px);
 
     @media (min-width: $screen-sm) {
       margin-bottom: 47px;
