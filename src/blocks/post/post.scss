@@ -20,6 +20,10 @@
     margin-bottom: 20px;
   }
 
+  @media (min-width: $screen-lg) {
+    margin-bottom: 54px;
+  }
+
   &__inner {
 
     @media (min-width: $screen-sm) {
@@ -64,7 +68,7 @@
       }
 
       @media (min-width: $screen-lg) {
-        padding-top: 430px;
+        padding-top: 530px;
       }
     }
   }
@@ -101,6 +105,10 @@
         @media (min-width: $screen-md) { // stylelint-disable-line max-nesting-depth
           top: 57px;
         }
+
+        @media (min-width: $screen-xl) { // stylelint-disable-line max-nesting-depth
+          right: 9.13%;
+        }
       }
     }
   }
@@ -120,6 +128,10 @@
 
       @media (min-width: $screen-md) {
         max-height: 405px;
+      }
+
+      @media (min-width: $screen-lg) {
+        min-height: 506px;
       }
     }
   }
@@ -193,6 +205,10 @@
 
       & #{$block-name}__content {
         flex-direction: row;
+
+        @media (min-width: $screen-lg) { // stylelint-disable-line max-nesting-depth
+          padding-bottom: 16px;
+        }
       }
 
       & #{$block-name}__description {
@@ -210,6 +226,10 @@
 
     @media (min-width: $screen-md) {
       margin-bottom: 43px;
+    }
+
+    @media (min-width: $screen-xl) {
+      margin-bottom: 48px;
     }
   }
 }

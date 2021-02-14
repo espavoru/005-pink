@@ -52,6 +52,7 @@
   }
 
   @media (min-width: $screen-lg) {
+    min-height: 394px;
     background-image: url('../img/bg-hero-desktop@1x.webp');
 
     @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
@@ -82,6 +83,10 @@
     @media (min-width: $screen-sm) {
       margin-top: 179px;
       font-size: 50px;
+    }
+
+    @media (min-width: $screen-lg) {
+      margin-top: 172px;
     }
   }
 

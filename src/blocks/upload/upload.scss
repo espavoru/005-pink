@@ -122,7 +122,8 @@
       $xs-grid-gutter: 0,
       $sm-grid-gutter: 0,
       $md-grid-gutter: 0,
-      $lg-grid-gutter: 20px
+      $lg-grid-gutter: 20px,
+      $xl-grid-gutter: 20px
     );
 
     @include row($xs-grid-gutter: 0);
@@ -144,6 +145,10 @@
     @media (min-width: $screen-md) {
       margin-bottom: 27px;
       padding-top: 45px;
+    }
+
+    @media (min-width: $screen-lg) {
+      padding-top: 5px;
     }
   }
 
@@ -211,7 +216,7 @@
 
     @media (min-width: $screen-lg) {
       flex-basis: calc(180 / 410 * 100%);
-      margin-top: 146px;
+      margin-top: 126px;
     }
 
     &:hover {

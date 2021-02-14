@@ -37,8 +37,17 @@
       white-space: pre-line;
     }
 
+    @media (min-width: $screen-lg) {
+      margin-bottom: 89px;
+      white-space: nowrap;
+    }
+
     & br {
       display: none;
+
+      @media (min-width: $screen-lg) {
+        display: block;
+      }
     }
   }
 }
