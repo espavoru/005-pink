@@ -1,0 +1,180 @@
+//- Все примеси в этом файле должны начинаться c имени блока (contest)
+
+mixin contest(data, mods)
+
+  //- Принимает:
+  //-   data    {object} - данные
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +contest('Текст', 'some-mod')
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' contest--' + modsList[i].trim();
+      }
+    }
+
+  .contest(class=allMods)&attributes(attributes)
+    .contest__inner
+      p.contest__text.
+        Поделитесь своей историей и получите шанс выиграть ценный приз — 1000 миль на вашу бонусную карту! Пожалуйста, заполните форму ниже:
+
+      +form().contest__form
+          +fieldset('ФИО', 'full-name')
+            +field-text({
+              helpText: 'Фамилия:',
+              attrs: {
+                placeholder: 'Укажите фамилию *',
+                name: 'surname'
+              }
+            })
+            +field-text({
+              helpText: 'Имя:',
+              attrs: {
+                placeholder: 'Введите ваше имя *',
+                name: 'name'
+              }
+            })
+            +field-text({
+              helpText: 'Отчество:',
+              attrs: {
+                placeholder: 'Ну и отчество тоже',
+                name: 'patronimyc'
+              }
+            })
+          ///.form__fieldset--full-name
+
+          +fieldset('С каким приложением путешествовали?', 'app')
+            +field-radio([
+              {
+                title: 'Pink для iOS',
+                mods: '',
+                attrs: {
+                  name: 'app',
+                  value: 'ios',
+                  checked: true
+                }
+              },
+              {
+                title: 'Pink на Android',
+                mods: '',
+                attrs: {
+                  name: 'app',
+                  value: 'android'
+                }
+              },
+              {
+                title: 'Windows Phone',
+                mods: '',
+                attrs: {
+                  name: 'app',
+                  value: 'windows'
+                }
+              }
+            ])
+          ///.form__fieldset--app
+
+          +fieldset('Контактная информация', 'contacts')
+            +field-text({
+              title: 'номер телефона',
+              attrs: {
+                name: 'phone',
+                type: 'tel',
+                placeholder: 'Номер, пожалуйста',
+              }
+            })
+            +field-text({
+              title: 'Адрес почты',
+              attrs: {
+                name: 'email',
+                type: 'email',
+                placeholder: 'Введите почту *',
+              }
+            })
+          ///.form__fieldset--contacts
+
+          +fieldset('Ваши безбашенные достижения в путешествии', 'achievements')
+            +field-checkbox([
+              {
+                title: 'Сделал селфи с акулой',
+                attrs: {
+                  name: 'achievements',
+                  value: 'Сделал селфи с акулой',
+                  checked: true,
+                }
+              },
+            ])
+            +field-checkbox([
+              {
+                title: 'Обгорел на пляже',
+                attrs: {
+                  name: 'achievements',
+                  value: 'Обгорел на пляже',
+                  checked: true,
+                }
+              },
+            ])
+            +field-checkbox([
+              {
+                title: 'Видел Чака Норриса',
+                attrs: {
+                  name: 'achievements',
+                  value: 'Видел Чака Норриса',
+                  checked: false,
+                }
+              },
+            ])
+            +field-checkbox([
+              {
+                title: 'Накупил сувениров',
+                attrs: {
+                  name: 'achievements',
+                  value: 'Накупил сувениров',
+                  checked: false,
+                }
+              },
+            ])
+            +field-checkbox([
+              {
+                title: 'Удержал башню',
+                attrs: {
+                  name: 'achievements',
+                  value: 'Удержал башню',
+                  checked: true,
+                }
+              },
+            ])
+            +field-checkbox([
+              {
+                title: 'Разгромил отель',
+                attrs: {
+                  name: 'achievements',
+                  value: 'Разгромил отель',
+                  checked: false,
+                }
+              },
+            ])
+          ///.form__fieldset--achievements
+
+          +fieldset('Опишите свои эмоции', 'comment')
+            +field-text({
+              isTextarea: true,
+              attrs: {
+                placeholder: 'Можно прям в красках, не стесняясь в выражениях',
+                name: 'comment'
+              }
+            })
+          ///.form__fieldset--comment
+
+          +btn('Отправить форму')(type='submit')
+
+          +field-actions('* — обязательные поля')
+
+      ///.contest__form
+    ///.contest__inner
+  ///.contest
+      block
