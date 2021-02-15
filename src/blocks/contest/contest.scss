@@ -5,4 +5,201 @@
 .contest {
 
   $block-name:                &; // #{$block-name}__element
+
+  .form__fieldset {
+    @include container(
+      $xs-grid-gutter: 40px,
+      $sm-grid-gutter: 0,
+      $md-grid-gutter: 0
+    );
+  }
+
+  .form__fieldset--full-name:not(:last-child) {
+    order: -10;
+    margin-bottom: 0;
+    padding-bottom: 13px;
+  }
+
+  .form__fieldset--achievements {
+    order: -9;
+    padding-top: 77px;
+
+    background-color: $body-bg-contrast;
+  }
+
+  .form__fieldset--contacts {
+    order: -8;
+    padding-top: 16px;
+  }
+
+  .form__fieldset--app {
+    order: -7;
+    padding-top: 30px;
+    padding-bottom: 5px;
+
+    background-color: $body-bg-contrast;
+  }
+
+  .form__fieldset--comment {
+    order: -6;
+  }
+
+  .form__legend {
+    font-size: 14px;
+    line-height: 18px;
+    font-weight: 500;
+    text-transform: uppercase;
+    text-align: center;
+    color: $text-color-accent;
+  }
+
+  .field-text {
+    margin-bottom: 12px;
+  }
+
+  .field-text__input-wrap {
+    @include row($xs-grid-gutter: 0);
+  }
+
+  .field-text__name,
+  .field-text__help-text {
+    order: -1;
+    margin-bottom: 6px;
+    padding-left: 22px;
+
+    font-size: 14px;
+    line-height: 30px;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: $text-color-accent;
+  }
+
+  .field-text__input {
+    padding-top: 14px;
+    padding-left: 20px;
+    padding-bottom: 14px;
+    border: 2px solid $border-color;
+    border-radius: 0;
+
+    font-size: 18px;
+    line-height: 30px;
+    color: $text-color;
+  }
+
+  .field-checkbox {
+    margin-bottom: 52px;
+
+    &:last-of-type {
+      margin-bottom: 48px;
+    }
+  }
+
+  .field-radio__name,
+  .field-checkbox__name {
+    padding-left: 70px;
+  }
+
+  .field-checkbox__name-text {
+    font-size: 18px;
+    line-height: 30px;
+    color: $text-color;
+
+    &::before {
+      top: -2px;
+      left: 0;
+      width: 38px;
+      height: 38px;
+      border: 2px solid $border-color;
+      border-radius: 0;
+      background-color: $white;
+    }
+
+    &::after {
+      top: 7px;
+      left: 8px;
+
+      width: 22px;
+      height: 12px;
+      border-color: $text-color-accent;
+      box-shadow: none;
+    }
+  }
+
+  .field-radio__input-wrap {
+    margin-bottom: 44px;
+  }
+
+  .field-radio__name-text {
+    font-size: 18px;
+    line-height: 30px;
+    color: $text-color;
+
+    &::before {
+      top: -4px;
+      width: 38px;
+      height: 38px;
+      border: 2px solid $border-color;
+      background-color: $white;
+    }
+
+    &::after {
+      top: 7px;
+      left: 11px;
+      width: 15px;
+      height: 15px;
+      background-color: $text-color-accent;
+    }
+  }
+
+  .btn[type='submit'] {
+    margin-top: 20px;
+    margin-right: 20px;
+    margin-left: 20px;
+    padding-top: 17px;
+    padding-bottom: 17px;
+    border: none;
+    border-radius: 5px;
+
+    font-size: 18px;
+    line-height: 30px;
+    text-transform: uppercase;
+
+    background-color: $color-success;
+  }
+
+  .field-actions__text {
+    margin-top: 20px;
+
+    font-size: 14px;
+    line-height: 30px;
+    text-transform: uppercase;
+    text-align: center;
+    color: $text-color;
+
+    i {
+      font-style: normal;
+      color: $text-color-accent;
+    }
+  }
+
+  &__text {
+    margin-bottom: 27px;
+    padding-top: 46px;
+    padding-right: 20px;
+    padding-left: 20px;
+
+    font-size: 14px;
+    line-height: 30px;
+    text-align: center;
+
+    &--md {
+      display: none;
+    }
+  }
+
+  &__form {
+    @include row($xs-grid-gutter: 0);
+
+    justify-content: center;
+  }
 }

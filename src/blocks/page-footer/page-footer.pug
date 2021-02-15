@@ -17,7 +17,12 @@ mixin page-footer(mods)
       }
     }
 
-  footer.page-footer(class=[allMods, {'page-footer--index' : currentUrl == 'index.html'}], role='contentinfo')&attributes(attributes)
+    let className = '';
+
+    if (currentUrl == 'index.html') className = 'page-footer--index';
+    if (currentUrl == 'contest.html') className = 'page-footer--contest';
+
+  footer.page-footer(class=[allMods, className], role='contentinfo')&attributes(attributes)
     .page-footer__inner
       +logo('/')
         picture

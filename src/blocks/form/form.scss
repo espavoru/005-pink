@@ -4,6 +4,8 @@
 
 .form {
 
+  $block-name:                &; // #{$block-name}__element
+
   &__fieldset {
     min-width: 0;
     margin: 0;
@@ -12,6 +14,46 @@
 
     &:not(:last-child) {
       margin-bottom: $typo-margin-vertical;
+    }
+
+    &--contacts:not(:last-child) {
+      margin-bottom: 8px;
+    }
+
+    &--contacts #{$block-name}__legend,
+    &--full-name #{$block-name}__legend {
+      margin: 0;
+      padding-top: 0;
+      text-indent: -999em;
+      line-height: 0;
+    }
+
+    &--achievements #{$block-name}__legend {
+      position: relative;
+      top: 54px;
+      margin-bottom: 20px;
+    }
+
+    &--app #{$block-name}__legend {
+      position: relative;
+      top: 55px;
+      margin-bottom: 65px;
+    }
+
+    &--contacts .field-text {
+      margin-bottom: 17px;
+    }
+
+    &--comment {
+      #{$block-name}__legend {
+        position: relative;
+        top: 20px;
+        margin-bottom: 37px;
+      }
+
+      .field-text__input {
+        height: 200px;
+      }
     }
   }
 

@@ -21,7 +21,8 @@ mixin contest(data, mods)
   .contest(class=allMods)&attributes(attributes)
     .contest__inner
       p.contest__text.
-        Поделитесь своей историей и получите шанс выиграть ценный приз — 1000 миль на вашу бонусную карту! Пожалуйста, заполните форму ниже:
+        Поделитесь своей историей и получите шанс выиграть ценный приз — 1000 миль на вашу бонусную карту!
+        #[span.contest__text--md Пожалуйста, заполните форму ниже:]
 
       +form().contest__form
           +fieldset('ФИО', 'full-name')
@@ -97,7 +98,7 @@ mixin contest(data, mods)
             })
           ///.form__fieldset--contacts
 
-          +fieldset('Ваши безбашенные достижения в путешествии', 'achievements')
+          +fieldset('Ваши безбашенные<br> достижения в путешествии', 'achievements')
             +field-checkbox([
               {
                 title: 'Сделал селфи с акулой',
@@ -172,9 +173,8 @@ mixin contest(data, mods)
 
           +btn('Отправить форму')(type='submit')
 
-          +field-actions('* — обязательные поля')
+          +field-actions('<i>*</i> — обязательные поля')
 
       ///.contest__form
     ///.contest__inner
   ///.contest
-      block

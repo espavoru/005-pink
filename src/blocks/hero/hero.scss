@@ -88,6 +88,10 @@
     @media (min-width: $screen-lg) {
       margin-top: 172px;
     }
+
+    #{$block-name}--contest & {
+      margin-top: 47px;
+    }
   }
 
   &--index {
@@ -174,5 +178,10 @@
         }
       }
     }
+  }
+
+  &--contest {
+    height: 235px;
+    white-space: pre-line;
   }
 }
