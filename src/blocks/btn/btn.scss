@@ -83,4 +83,42 @@
   //     // border-color: $color-main;
   //   }
   // }
+
+  &--success {
+    min-width: 280px;
+    margin-top: 20px;
+    margin-right: 20px;
+    margin-left: 20px;
+    padding-top: 17px;
+    padding-bottom: 17px;
+    border: none;
+    border-radius: 5px;
+
+    font-size: 18px;
+    line-height: 30px;
+    text-transform: uppercase;
+    color: $white;
+
+    background-color: $color-success;
+
+    &:hover {
+      color: $white;
+      background-color: darken($color: $color-success, $amount: 2%);
+    }
+
+    &:active {
+      color: rgba($color: $white, $alpha: 0.3);
+      background-color: darken($color: $color-success, $amount: 2%);
+    }
+
+    &:focus {
+      box-shadow: none;
+    }
+
+    &:disabled {
+      color: $white;
+      background-color: $body-bg-contrast;
+      opacity: 1;
+    }
+  }
 }

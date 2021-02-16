@@ -61,6 +61,14 @@
       border-radius: 50%;
 
       background-color: transparent;
+
+      &:hover {
+        border-color: $text-color;
+      }
+
+      &:active {
+        opacity: 0.5;
+      }
     }
 
     &__link-wrap {

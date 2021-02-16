@@ -10,6 +10,7 @@ let config = {
   'alwaysAddBlocks': [
     'modernizr',
     'sprite-svg',
+    'popup',
     // 'sprite-png',
     // 'object-fit-polyfill',
   ],

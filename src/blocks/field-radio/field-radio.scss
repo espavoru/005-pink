@@ -75,8 +75,14 @@
       border-radius: 50%;
     }
 
-    @at-root input:focus ~ &:before {
-      @include field-focus;
+    @at-root input:hover ~ &:before {
+      // @include field-focus;
+      border-color: $text-color;
+    }
+
+    @at-root input:active ~ &:before {
+      // @include field-focus;
+      border-color: $text-color-accent;
     }
 
     @at-root input:disabled ~ &:before {

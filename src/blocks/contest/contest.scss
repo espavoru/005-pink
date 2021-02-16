@@ -84,6 +84,15 @@
     font-size: 18px;
     line-height: 30px;
     color: $text-color;
+
+    &:hover {
+      border-color: $text-color;
+    }
+
+    &:focus {
+      border-color: $text-color-accent;
+      box-shadow: none;
+    }
   }
 
   .field-checkbox {
@@ -149,22 +158,6 @@
       height: 15px;
       background-color: $text-color-accent;
     }
-  }
-
-  .btn[type='submit'] {
-    margin-top: 20px;
-    margin-right: 20px;
-    margin-left: 20px;
-    padding-top: 17px;
-    padding-bottom: 17px;
-    border: none;
-    border-radius: 5px;
-
-    font-size: 18px;
-    line-height: 30px;
-    text-transform: uppercase;
-
-    background-color: $color-success;
   }
 
   .field-actions__text {
