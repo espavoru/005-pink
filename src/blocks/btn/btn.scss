@@ -101,6 +101,10 @@
 
     background-color: $color-success;
 
+    @media (min-width: $screen-sm) {
+      width: 300px;
+    }
+
     &:hover {
       color: $white;
       background-color: darken($color: $color-success, $amount: 2%);

@@ -139,6 +139,28 @@
 
     .logo {
       padding-top: 25px;
+
+      @media (min-width: $screen-sm) {
+        @include col(sm, 6, 12, 0);
+      }
+    }
+
+    .social {
+
+      @media (min-width: $screen-sm) {
+        @include col(sm, 6, 12, 0);
+      }
+    }
+
+    #{$block-name}__inner {
+      justify-content: center;
+    }
+
+    #{$block-name}__logo {
+
+      @media (min-width: $screen-sm) {
+        // margin: 0;
+      }
     }
   }
 }

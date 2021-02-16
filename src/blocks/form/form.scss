@@ -18,6 +18,23 @@
 
     &--contacts:not(:last-child) {
       margin-bottom: 8px;
+
+      @media (min-width: $screen-sm) {
+
+        #{$block-name}__legend {
+          width: auto;
+          margin-bottom: 10px;
+          padding-right: 33px;
+          padding-left: 33px;
+
+          text-indent: 0;
+          line-height: 30px;
+        }
+
+        .field-text__input-wrap {
+          margin-bottom: 13px;
+        }
+      }
     }
 
     &--contacts #{$block-name}__legend,
@@ -32,12 +49,29 @@
       position: relative;
       top: 54px;
       margin-bottom: 20px;
+
+      @media (min-width: $screen-sm) {
+        position: static;
+        width: auto;
+        padding-right: 33px;
+        padding-left: 33px;
+      }
     }
 
     &--app #{$block-name}__legend {
       position: relative;
       top: 55px;
       margin-bottom: 65px;
+
+      @media (min-width: $screen-sm) {
+        position: static;
+        top: unset;
+        width: auto;
+        margin-bottom: 15px;
+        padding-right: 25px;
+        padding-left: 25px;
+        line-height: 30px;
+      }
     }
 
     &--contacts .field-text {
@@ -49,6 +83,14 @@
         position: relative;
         top: 20px;
         margin-bottom: 37px;
+
+        @media (min-width: $screen-sm) { // stylelint-disable-line max-nesting-depth
+          position: static;
+          margin-bottom: 0;
+          width: auto;
+          padding-right: 33px;
+          padding-left: 33px;
+        }
       }
 
       .field-text__input {

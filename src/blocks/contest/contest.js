@@ -18,9 +18,7 @@ import Popup from '../popup/popup';
     submit: 'ЗАКРЫТЬ ОКНО'
   });
 
-  form.addEventListener('submit', e => {
-    e.preventDefault();
-
+  form.addEventListener('submit', () => {
     setTimeout(() => {
       // document.body.appendChild(popupFail.getElem());
       document.body.appendChild(popupSuccess.getElem());

@@ -24,12 +24,13 @@ mixin contest(data, mods)
         Поделитесь своей историей и получите шанс выиграть ценный приз — 1000 миль на вашу бонусную карту!
         #[span.contest__text--md Пожалуйста, заполните форму ниже:]
 
-      +form().contest__form
+      +form().contest__form(action='https://submit-form.com/ajAnRZop')
           +fieldset('ФИО', 'full-name')
             +field-text({
               helpText: 'Фамилия:',
               attrs: {
                 placeholder: 'Укажите фамилию *',
+                required: true,
                 name: 'surname'
               }
             })
@@ -37,6 +38,7 @@ mixin contest(data, mods)
               helpText: 'Имя:',
               attrs: {
                 placeholder: 'Введите ваше имя *',
+                required: true,
                 name: 'name'
               }
             })
@@ -82,6 +84,7 @@ mixin contest(data, mods)
           +fieldset('Контактная информация', 'contacts')
             +field-text({
               title: 'номер телефона',
+              mods: 'phone',
               attrs: {
                 name: 'phone',
                 type: 'tel',
@@ -90,6 +93,7 @@ mixin contest(data, mods)
             })
             +field-text({
               title: 'Адрес почты',
+              mods: 'email',
               attrs: {
                 name: 'email',
                 type: 'email',

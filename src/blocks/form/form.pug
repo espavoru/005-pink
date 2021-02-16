@@ -31,10 +31,9 @@ mixin form(mods)
       }
     }
 
-  form.form(class=allMods)&attributes(attributes)
+  form.form(class=allMods, target='_blank')&attributes(attributes)
+    input(type='checkbox', name='_gotcha', style='display:none',tabindex='-1', autocomplete='off')
     block
-
-
 
 mixin fieldset(legend, mods)
 

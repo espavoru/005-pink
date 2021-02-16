@@ -183,5 +183,23 @@
   &--contest {
     height: 235px;
     white-space: pre-line;
+
+    @media (min-width: $screen-sm) {
+
+      #{$block-name}__inner {
+        @include container($sm-grid-gutter: 40px);
+      }
+
+      #{$block-name}__title {
+        margin-top: 131px;
+        font-size: 46px;
+      }
+    }
+
+    @media (min-width: $screen-md) {
+      #{$block-name}__title {
+        font-size: 50px;
+      }
+    }
   }
 }
