@@ -23,7 +23,6 @@
 
         #{$block-name}__legend {
           width: auto;
-          margin-bottom: 10px;
           padding-right: 33px;
           padding-left: 33px;
 
@@ -32,7 +31,7 @@
         }
 
         .field-text__input-wrap {
-          margin-bottom: 13px;
+          margin-bottom: 10px;
         }
       }
     }
@@ -45,16 +44,34 @@
       line-height: 0;
     }
 
+    &--contacts #{$block-name}__legend {
+
+      @media (min-width: $screen-sm) {
+        margin-bottom: 10px;
+      }
+
+      @media (min-width: $screen-md) {
+        margin-bottom: 15px;
+      }
+    }
+
+
     &--achievements #{$block-name}__legend {
       position: relative;
       top: 54px;
       margin-bottom: 20px;
+      white-space: pre-line;
 
       @media (min-width: $screen-sm) {
         position: static;
         width: auto;
         padding-right: 33px;
         padding-left: 33px;
+        white-space: nowrap;
+
+        br { // stylelint-disable-line max-nesting-depth
+          display: block;
+        }
       }
     }
 
@@ -71,6 +88,10 @@
         padding-right: 25px;
         padding-left: 25px;
         line-height: 30px;
+      }
+
+      @media (min-width: $screen-md) {
+        margin-bottom: 12px;
       }
     }
 
@@ -94,7 +115,7 @@
       }
 
       .field-text__input {
-        height: 200px;
+        height: 191px;
       }
     }
   }

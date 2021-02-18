@@ -137,6 +137,10 @@
 
   &--contest {
 
+    @media (min-width: $screen-md) {
+      padding-top: 26px;
+    }
+
     .logo {
       padding-top: 25px;
 
