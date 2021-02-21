@@ -34,6 +34,24 @@
           margin-bottom: 10px;
         }
       }
+
+      @media (min-width: $screen-lg) {
+
+        .field-text {
+          flex-basis: calc(50% - 70px);
+          flex-grow: 1;
+        }
+      }
+    }
+
+    &--full-name {
+
+      @media (min-width: $screen-lg) {
+
+        .field-text__input {
+          padding-left: 20px;
+        }
+      }
     }
 
     &--contacts #{$block-name}__legend,
@@ -53,8 +71,23 @@
       @media (min-width: $screen-md) {
         margin-bottom: 15px;
       }
+
+      @media (min-width: $screen-lg) {
+        margin-bottom: 13px;
+      }
     }
 
+
+    &--achievements {
+
+      @media (min-width: $screen-lg) {
+
+        .field-checkbox {
+          flex-basis: 50%;
+          margin-bottom: 0;
+        }
+      }
+    }
 
     &--achievements #{$block-name}__legend {
       position: relative;
@@ -115,7 +148,11 @@
       }
 
       .field-text__input {
-        height: 191px;
+        min-height: 191px;
+
+        @media (min-width: $screen-lg) { // stylelint-disable-line  max-nesting-depth
+          min-height: 124px;
+        }
       }
     }
   }

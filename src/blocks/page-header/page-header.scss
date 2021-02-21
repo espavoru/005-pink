@@ -3,6 +3,9 @@
 // Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
 
 .page-header {
+
+  $block-name:                &; // #{$block-name}__element
+
   position: absolute;
   z-index: 10;
   width: 100%;
@@ -27,6 +30,16 @@
     @media (min-width: 960px) {
       @include row($lg-grid-gutter: 0);
       @include row($xl-grid-gutter: 0);
+    }
+  }
+
+  &--contest {
+
+    #{$block-name}__inner {
+      @include container(
+        $lg-grid-gutter: 20px,
+        $xl-grid-gutter: 20px
+      );
     }
   }
 }

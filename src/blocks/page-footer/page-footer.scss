@@ -141,6 +141,10 @@
       padding-top: 26px;
     }
 
+    @media (min-width: $screen-lg) {
+      padding-top: 8px;
+    }
+
     .logo {
       padding-top: 25px;
 

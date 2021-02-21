@@ -17,6 +17,8 @@ mixin page-header(mods)
       }
     }
 
+    if (currentUrl == 'contest.html') allMods = allMods + ' page-header--contest';
+
   header.page-header(id='page-header', class=allMods, role='banner')&attributes(attributes)
     .page-header__inner
       .page-header__grid

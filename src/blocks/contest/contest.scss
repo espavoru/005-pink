@@ -15,6 +15,8 @@
   }
 
   .form__fieldset--full-name:not(:last-child) {
+    @include col(lg, 6, 12, 0);
+
     order: -10;
     margin-bottom: 0;
     padding-bottom: 13px;
@@ -25,6 +27,11 @@
 
     @media (min-width: $screen-md) {
       margin-bottom: 38px;
+    }
+
+    @media (min-width: $screen-lg) {
+      padding-top: 19px;
+      padding-right: 34px;
     }
   }
 
@@ -45,6 +52,16 @@
 
       background-color: transparent;
     }
+
+    @media (min-width: $screen-lg) {
+      flex-direction: column;
+      align-content: space-between;
+      max-height: 240px;
+      margin-bottom: 62px;
+      padding-right: 60px;
+      padding-bottom: 10px;
+      padding-left: 60px;
+    }
   }
 
   .form__fieldset--contacts {
@@ -62,10 +79,15 @@
 
       background-color: transparent;
     }
+
+    @media (min-width: $screen-lg) {
+      padding-bottom: 6px;
+    }
   }
 
   .form__fieldset--app {
     @include row($sm-grid-gutter: 0);
+    @include col(lg, 6, 12, 0);
 
     justify-content: center;
     order: -7;
@@ -85,6 +107,11 @@
       margin-bottom: 49px;
       padding-bottom: 0;
     }
+
+    @media (min-width: $screen-lg) {
+      flex-basis: calc(6 / 12 * 100% - 34px);
+      margin-left: 34px;
+    }
   }
 
   .form__fieldset--comment {
@@ -100,6 +127,11 @@
       padding-left: 60px;
 
       border: 2px solid $body-bg-contrast;
+    }
+
+    @media (min-width: $screen-lg) {
+      padding-top: 35px;
+      padding-bottom: 46px;
     }
   }
 
@@ -127,9 +159,9 @@
         display: inline-block;
         position: absolute;
         top: 0;
-        right: 0;
-        width: 62px;
-        height: 62px;
+        right: -1px;
+        width: 64px;
+        height: 64px;
 
         background-color: $body-bg-contrast;
         background-image: url('data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAmCAYAAAC29NkdAAACmUlEQVRYhdWY33HUMBDGPzz3jqkAPfKGqYC7ChJeeM5VAKkAqCBQwV0HhApiKshBBUcFmA6YDZ8yG0V/VicfhG/Gk5NtST/talfrPPr+7DUMGng5AM8B9Gz3ls4AJgA7/v0GYM/2rtRxkbgvE58COAGwrABJqec44LgafATwBcAl23cUWlAGegvgzQxQtRK4TwA+alANKEBXdN2/lLh95SE7BfIQ4ECGK9/wgO8fCJzXQKZbF/807Dkx+RbAr8bJHwM4M873ZMGosgTEmpE2h74C+FwY5yaTdEwlFt1LAQ2yjnWyaNh7ko56Jt1t4p0zJveJ6aNWQw3gXv2+IKBWCClwG9V+CuC8FrAzvBQDDBflIu+HW0f3KR5xXp1hPxzqnlzgTeGJkXpP0oyjO/bKSlNmlTLxdWC1fWBhRIoJef4iA6Xfd7y21mpGw7WcOHeOMYtq9uAcZ7U/xsyFiBVwzkKiCjJVD2pZ4UaeEKKXqv7LQRbdXQK0wEk0fohMJH3fRfJlFWTOxRa4NZNvbIKJz9aZ/kV350r+EpxYTZ8eS+XWkRd4wjhaMwcZtWQszVjgbkoh1d4wl2ptA+uVSrpoCgpdbA0IXXYtI3DgvSHRJ6aouzVgTSr5EQCmdJroY4b0gC15LjzirM9MkB5wUwmnK5Xo9yzvXSb6WCA3HtAFrrAO4Bc0cXOP6vkYbPjhAO8Ik1skajmLZIUrVfmsEn36oHCtkaspFkL5vZJboGs9w1sARQNrw4sgmpe8d91aYFiKhZL8/3NSZ26TWi14dHWMuEPy1bElTKO34KuaL62/oJFMt3twxw8apyJP6/wICxgYSFqr8AMsDJLY15lfwBi5P7fuzfFfBElMUox6SV13DOvJmLrg1XP+EYDfR3WiCq9wdJQAAAAASUVORK5CYII=');
@@ -155,6 +187,11 @@
 
       @media (min-width: $screen-md) {
         margin-bottom: 23px;
+      }
+
+      @media (min-width: $screen-lg) {
+        margin-right: 70px;
+        margin-bottom: 0;
       }
     }
   }
@@ -249,6 +286,17 @@
       margin-left: 59px;
       padding-left: 58px;
     }
+
+    @media (min-width: $screen-lg) {
+      margin-left: 74px;
+    }
+  }
+
+  .field-checkbox__name {
+
+    @media (min-width: $screen-lg) {
+      margin-left: 0;
+    }
   }
 
   .field-checkbox__name-text {
@@ -318,6 +366,14 @@
 
   .field-actions {
     @include col(sm, 6, 12, 0);
+
+    span {
+      display: none;
+
+      @media (min-width: $screen-lg) {
+        display: inline;
+      }
+    }
   }
 
   .field-actions__text {
@@ -347,6 +403,7 @@
     @media (min-width: $screen-sm) {
       width: auto;
       min-width: unset;
+      max-width: 300px;
       margin: 0;
     }
   }
@@ -356,7 +413,9 @@
     @media (min-width: $screen-sm) {
       @include container(
         $sm-grid-gutter: 40px,
-        $md-grid-gutter: 40px
+        $md-grid-gutter: 40px,
+        $lg-grid-gutter: 20px,
+        $xl-grid-gutter: 20px
       );
     }
   }
@@ -385,11 +444,21 @@
       padding-left: 60px;
     }
 
+    @media (min-width: $screen-lg) {
+      margin-bottom: 65px;
+      padding-right: 90px;
+      padding-left: 90px;
+    }
+
     &--md {
       display: none;
 
       @media (min-width: $screen-md) {
         display: block;
+      }
+
+      @media (min-width: $screen-lg) {
+        display: inline;
       }
     }
   }
@@ -401,6 +470,10 @@
 
     @media (min-width: $screen-sm) {
       margin-bottom: 63px;
+    }
+
+    @media (min-width: $screen-lg) {
+      justify-content: space-between;
     }
   }
 }
